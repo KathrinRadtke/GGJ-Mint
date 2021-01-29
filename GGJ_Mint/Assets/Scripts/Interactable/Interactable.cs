@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Outline))]
 public class Interactable : MonoBehaviour
 {
     public enum InteractableType
@@ -13,6 +14,16 @@ public class Interactable : MonoBehaviour
     [Header("Interactable Settings")]
     public InteractableType m_Type;
     public float m_InteractableRange = 1.5f;
+
+    // Hidden Variable
+    [HideInInspector] private Outline outline;
+
+    public void SetOutline(bool active) => outline.enabled = active;
+
+    private void Start()
+    {
+        outline = GetComponent<Outline>();
+    }
 
     public void Interact()
     {

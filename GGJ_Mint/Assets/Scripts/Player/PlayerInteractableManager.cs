@@ -17,11 +17,14 @@ public class PlayerInteractableManager : MonoBehaviour
     {
         getNearestInteractable();
 
-        if (Input.GetKeyDown(KeyCode.E) && isInteractableInRange())
+        if (isInteractableInRange())
         {
-            // TODO: Show Outline Shader
-            m_NearestInteractable.Interact();
-        }
+            m_NearestInteractable.SetOutline(true);
+
+            if (Input.GetKeyDown(KeyCode.E))
+                m_NearestInteractable.Interact();
+        } else
+            m_NearestInteractable.SetOutline(false);
     }
 
     private bool isInteractableInRange()
