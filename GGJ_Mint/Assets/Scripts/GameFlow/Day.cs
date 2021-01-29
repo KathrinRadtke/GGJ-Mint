@@ -7,6 +7,6 @@ public class Day : ScriptableObject
     public string prompt;
     public string[] answers;
 
-    public string taskMessage;
-    public string activityMessage;
+    public string[] taskMessage;
+    public string[] activityMessage;
 }

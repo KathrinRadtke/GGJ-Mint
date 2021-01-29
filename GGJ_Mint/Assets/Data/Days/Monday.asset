@@ -13,3 +13,15 @@ MonoBehaviour:
   m_Name: Monday
   m_EditorClassIdentifier: 
   textMessage: Hey, how are you?
+  prompt: Get out of bed?
+  answers:
+  - no
+  - no
+  taskMessage:
+  - example 1
+  - example 2
+  - example 3
+  activityMessage:
+  - bla1
+  - 'sflsd slkdf skldfj slkfj slkdf jsflsfjl '
+  - bla bla bla

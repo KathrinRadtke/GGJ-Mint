@@ -12,17 +12,29 @@ public class GameFlowService : Singleton<GameFlowService>
     {
         currentDay = days[0];
         StartDay(currentDay);
-        
     }
 
     public void PlayTask()
+    {
+        textBox.PlayText(currentDay.taskMessage);
+        textBox.onTextFinished += TaskFinished;
+    }
+
+    private void TaskFinished()
     {
         
     }
 
     public void PlayActivity()
     {
-        
+        textBox.PlayText(currentDay.activityMessage);
+        textBox.onTextFinished += ActivtyFinished;
+    }
+
+    private void ActivtyFinished()
+    {
+        textBox.onTextFinished -= ActivtyFinished;
+        Debug.Log("activity finished");
     }
 
 
@@ -35,7 +47,7 @@ public class GameFlowService : Singleton<GameFlowService>
 
     private void StartDay(Day day)
     {
-        textBox.ShowText(day.textMessage);
+        textBox.PlayText(new[]{day.textMessage});
     }
     
     
