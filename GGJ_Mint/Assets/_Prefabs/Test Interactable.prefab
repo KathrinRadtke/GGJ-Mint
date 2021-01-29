@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4821292541374477358}
   - component: {fileID: 4821292541374477359}
   - component: {fileID: 4821292541374477352}
+  - component: {fileID: 1136068835}
   m_Layer: 0
   m_Name: Test Interactable
   m_TagString: Untagged
@@ -95,3 +96,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1136068835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4821292541374477354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49aab849a18df444b5e38da358d477d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Type: 1
+  m_InteractableRange: 2.07
