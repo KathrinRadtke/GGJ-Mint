@@ -22,6 +22,6 @@ MonoBehaviour:
   - example 2
   - example 3
   activityMessage:
-  - bla1
-  - 'sflsd slkdf skldfj slkfj slkdf jsflsfjl '
-  - bla bla bla
+  - This shows some text.
+  - Much wow.
+  - Bla bla bla
