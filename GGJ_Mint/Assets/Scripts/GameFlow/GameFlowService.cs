@@ -12,7 +12,6 @@ public class GameFlowService : Singleton<GameFlowService>
     {
         currentDay = days[0];
         StartDay(currentDay);
-        
     }
 
     public void PlayTask()
@@ -37,8 +36,6 @@ public class GameFlowService : Singleton<GameFlowService>
     {
         textBox.ShowText(day.textMessage);
     }
-    
-    
 }
 
 
