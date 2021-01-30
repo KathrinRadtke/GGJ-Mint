@@ -1977,7 +1977,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 200}
+  m_SizeDelta: {x: 400, y: 200}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &4167841885333292128
 CanvasRenderer:
@@ -2007,7 +2007,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Game Title
+  m_text: I used to
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2993dabb2b5b5244eba4ce258db3d8a7, type: 2}
   m_sharedMaterial: {fileID: 1455312654322673739, guid: 2993dabb2b5b5244eba4ce258db3d8a7,
