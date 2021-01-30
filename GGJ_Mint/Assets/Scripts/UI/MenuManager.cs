@@ -77,6 +77,8 @@ public class MenuManager : Singleton<MenuManager>
         }
     }
 
+    #region Menu Animations
+
     public void AnimateMainMenu(float delay)
     {
         isMainMenuOpen = !isMainMenuOpen;
@@ -123,6 +125,10 @@ public class MenuManager : Singleton<MenuManager>
         LeanTween.moveX(m_Background, m_Background.transform.position.x == -80 ? -500 : -80, 1.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseInOutBack();
     }
 
+    #endregion
+
+    #region Buttons
+
     public void QuitButton()
     {
         Application.Quit();
@@ -140,4 +146,6 @@ public class MenuManager : Singleton<MenuManager>
         AnimateMainMenu(0);
         AnimateSettings(0.9f);
     }
+
+    #endregion
 }
