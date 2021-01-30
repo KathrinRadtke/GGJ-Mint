@@ -4,7 +4,7 @@ using UnityEngine;
 public class Day : ScriptableObject
 {
     public string textMessage;
-    public string prompt;
+    public string[] prompt;
     public string[] answers;
 
     public string[] taskMessage;

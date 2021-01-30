@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: 1_Monday
   m_EditorClassIdentifier: 
   textMessage: Hey, how are you?
-  prompt: Get out of bed?
-  answers:
-  - no
-  - no
+  prompt:
+  - No way I'm getting up today.
+  answers: []
   taskMessage: []
+  taskSound: 
   activityMessage: []
+  activitySound: 

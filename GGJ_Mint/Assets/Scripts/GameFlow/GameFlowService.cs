@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
+using TreeEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -155,6 +157,39 @@ public class GameFlowService : Singleton<GameFlowService>
     private void StartDay(Day day)
     {
         textBox.PlayText(new[]{day.textMessage});
+        if (currentDay.prompt != null && currentDay.prompt.Length > 0)
+        {
+            textBox.onTextFinished += PlayPrompt;
+        }
+    }
+
+    private void PlayPrompt()
+    {
+        textBox.onTextFinished -= PlayPrompt;
+        textBox.PlayText(currentDay.prompt);
+        if (currentDay.answers != null)
+        {
+            textBox.onTextFinished += PlayAnswers;
+        }
+
+        if ((currentDay.taskMessage == null || currentDay.taskMessage.Length == 0) &&
+            (currentDay.activityMessage == null || currentDay.activityMessage.Length == 0))
+        {
+            textBox.onTextFinished += SkipDay;
+        }
+    }
+
+    private void SkipDay()
+    {
+        textBox.onTextFinished -= SkipDay;
+        StartNextDay();
+
+    }
+
+    private void PlayAnswers()
+    {
+        // todo
+        textBox.onTextFinished -= PlayAnswers;
     }
 }
 
