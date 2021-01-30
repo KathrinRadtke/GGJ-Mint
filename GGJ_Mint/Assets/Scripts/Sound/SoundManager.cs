@@ -14,6 +14,7 @@ public class SoundManager : Singleton<SoundManager>
     private void Start()
     {
         InitSoundManager();
+        playMusic("MX_Day3", 0.01f);
     }
 
     public void InitSoundManager()
