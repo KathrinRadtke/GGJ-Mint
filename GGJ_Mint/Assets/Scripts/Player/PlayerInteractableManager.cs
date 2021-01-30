@@ -11,6 +11,8 @@ public class PlayerInteractableManager : MonoBehaviour
     {
         // Don't sue me for this garbage line
         m_InteractableArray = GameObject.FindObjectsOfType<Interactable>();
+
+        foreach (Interactable inter in m_InteractableArray) inter.SetOutline(false);
     }
 
     void Update()
