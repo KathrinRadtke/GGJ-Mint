@@ -122,6 +122,13 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - Name: Yoga
+    AudioClip: {fileID: 8300000, guid: 72d8e3d47805d93468bb8f7ba3dc03c0, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   - Name: AMB_Birds
     AudioClip: {fileID: 8300000, guid: f78be9fe48e632b48a1a4f53c4af625e, type: 3}
     mixerGroup: {fileID: -3035194350459163786, guid: cd9753436728016489e6b319a485743b,
