@@ -45,4 +45,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textBox: {fileID: 0}
   days:
-  - {fileID: 11400000, guid: 012116dce3b46f240b3b8757d5266f57, type: 2}
+  - {fileID: 11400000, guid: 30e7e7c60833ad1419babe918cec8cdf, type: 2}
+  - {fileID: 11400000, guid: da717535de10ac949a7c1d32a1802f31, type: 2}
+  - {fileID: 11400000, guid: 242aa734625d1674c9c604b7913470e3, type: 2}
+  - {fileID: 11400000, guid: 4eceb09516a266c4287f1550e89a567a, type: 2}
+  - {fileID: 11400000, guid: 4b4d255de69aa9f49904ed0b68e9b1c2, type: 2}
+  - {fileID: 11400000, guid: ef2e6943ae16522449fee32bdf26f684, type: 2}
+  daysInteractables:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  notDoneMessage: I'm not tired right now

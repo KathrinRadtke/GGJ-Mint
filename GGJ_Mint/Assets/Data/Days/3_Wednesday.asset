@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fadb8d9b93b0ed449b6289a401fd9c6, type: 3}
-  m_Name: Monday
+  m_Name: 3_Wednesday
   m_EditorClassIdentifier: 
   textMessage: Hey, how are you?
   prompt: Get out of bed?

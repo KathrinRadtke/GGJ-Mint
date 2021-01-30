@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,11 +12,24 @@ public class TextBox : MonoBehaviour
     private int currentTextIndex = 0;
     private string[] currentText;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            ShowNextLine();
+        }
+    }
+
     public void PlayText(string[] textToShow)
     {
-        gameObject.SetActive(true);
-        currentTextIndex = -1;
-        currentText = textToShow;
+        if (textToShow != currentText)
+        {
+            GameFlowService.Instance.SetMovementAndInteraction(false);
+            gameObject.SetActive(true);
+            enabled = true;
+            currentTextIndex = -1;
+            currentText = textToShow;
+        }
         ShowNextLine();
     }
 
@@ -26,7 +38,11 @@ public class TextBox : MonoBehaviour
         currentTextIndex++;
         if (currentTextIndex > currentText.Length - 1)
         {
+            GameFlowService.Instance.SetMovementAndInteraction(true);
             gameObject.SetActive(false);
+            enabled = false;
+            currentTextIndex = -1;
+            currentText = null;
             onTextFinished?.Invoke();
         }
         else

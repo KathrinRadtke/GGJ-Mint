@@ -8,7 +8,8 @@ public class Interactable : MonoBehaviour
     public enum InteractableType
     {
         TASK,
-        ACTIVITY
+        ACTIVITY,
+        BED
     }
 
     [Header("Interactable Settings")]
@@ -31,10 +32,15 @@ public class Interactable : MonoBehaviour
         {
             InteractAnimation();
             GameFlowService.Instance.PlayActivity();
-        } else
+        } 
+        else if(m_Type == InteractableType.TASK)
         {
             InteractAnimation();
             GameFlowService.Instance.PlayTask();
+        }
+        else
+        {
+            GameFlowService.Instance.GoToBed();
         }
     }
 
