@@ -36,6 +36,6 @@ public class PlayerMovement : MonoBehaviour
     public void MovementInput()
     {
         inputMovement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-        transform.Translate(inputMovement * Time.deltaTime * m_MovementSpeed, Space.World)
+        transform.Translate(inputMovement * Time.deltaTime * m_MovementSpeed, Space.World);
     }
 }
