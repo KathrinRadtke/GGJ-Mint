@@ -19,6 +19,7 @@ public class MenuManager : Singleton<MenuManager>
     public GameObject m_QuitButton;
 
     [Header("Settings Objects")]
+    public SettingsManager m_SettingsManager;
     public GameObject m_SettingsTitle;
     public GameObject m_Master;
     public GameObject m_Music;
@@ -36,6 +37,7 @@ public class MenuManager : Singleton<MenuManager>
 
     private void Init()
     {
+        Time.timeScale = 0;
         AnimateBackground(0);
         AnimateMainMenu(0);
     }
@@ -46,7 +48,7 @@ public class MenuManager : Singleton<MenuManager>
         // Open and Close Menu
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (isMainMenuOpen)
+            if (isMainMenuOpen && Time.timeScale == 1)
             {
                 AnimateMainMenu(0);
                 AnimateBackground(0.5f);
@@ -57,20 +59,37 @@ public class MenuManager : Singleton<MenuManager>
                 AnimateSettings(0);
                 AnimateMainMenu(1.1f);
             }
+        } else if (Input.GetKeyDown(KeyCode.Tab) && Time.timeScale == 1)
+        {
+            if (!isMainMenuOpen && !isSettingsOpen)
+            {
+                AnimateBackground(0);
+                AnimateMainMenu(0.5f);
+            } else if (!isMainMenuOpen && isSettingsOpen)
+            {
+                AnimateSettings(0);
+                AnimateMainMenu(1.1f);
+            } else if (isMainMenuOpen && !isSettingsOpen)
+            {
+                AnimateBackground(0.5f);
+                AnimateMainMenu(0);
+            }
         }
     }
 
     public void AnimateMainMenu(float delay)
     {
-        LeanTween.scale(m_MainMenuTitle.gameObject, m_MainMenuTitle.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.3f).setDelay(delay).setEaseOutBack().setOnComplete(() =>
+        isMainMenuOpen = !isMainMenuOpen;
+
+        LeanTween.scale(m_MainMenuTitle.gameObject, m_MainMenuTitle.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseOutBack().setOnComplete(() =>
         {
-            LeanTween.scale(m_PlayButton.gameObject, m_PlayButton.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setEaseOutBack().setOnComplete(() =>
+            LeanTween.scale(m_PlayButton.gameObject, m_PlayButton.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
             {
-                LeanTween.scale(m_SettingsButton.gameObject, m_SettingsButton.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setEaseOutBack().setOnComplete(() =>
+                LeanTween.scale(m_SettingsButton.gameObject, m_SettingsButton.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
                 {
-                    LeanTween.scale(m_QuitButton.gameObject, m_QuitButton.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setEaseOutBack().setOnComplete(() =>
+                    LeanTween.scale(m_QuitButton.gameObject, m_QuitButton.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
                     {
-                        isMainMenuOpen = !isMainMenuOpen;
+                        
                     });
                 });
             });
@@ -79,17 +98,20 @@ public class MenuManager : Singleton<MenuManager>
 
     public void AnimateSettings(float delay)
     {
-        LeanTween.scale(m_SettingsTitle, m_SettingsTitle.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.3f).setDelay(delay).setEaseOutBack().setOnComplete(() =>
+        isSettingsOpen = !isSettingsOpen;
+        m_SettingsManager.ChangeSliderStatus(isSettingsOpen);
+
+        LeanTween.scale(m_SettingsTitle, m_SettingsTitle.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseOutBack().setOnComplete(() =>
         {
-            LeanTween.scale(m_Master, m_Master.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setEaseOutBack().setOnComplete(() =>
+            LeanTween.scale(m_Master, m_Master.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
             {
-                LeanTween.scale(m_Music, m_Music.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setEaseOutBack().setOnComplete(() =>
+                LeanTween.scale(m_Music, m_Music.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
                 {
-                    LeanTween.scale(m_SFX, m_SFX.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setEaseOutBack().setOnComplete(() =>
+                    LeanTween.scale(m_SFX, m_SFX.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
                     {
-                        LeanTween.scale(m_Ampience, m_Ampience.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setEaseOutBack().setOnComplete(() =>
+                        LeanTween.scale(m_Ampience, m_Ampience.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
                         {
-                            isSettingsOpen = !isSettingsOpen;
+                            
                         });
                     });
                 });
@@ -99,7 +121,7 @@ public class MenuManager : Singleton<MenuManager>
 
     public void AnimateBackground(float delay)
     {
-        LeanTween.moveX(m_Background, m_Background.transform.position.x == -80 ? -500 : -80, 1.3f).setDelay(delay).setEaseInOutBack();
+        LeanTween.moveX(m_Background, m_Background.transform.position.x == -80 ? -500 : -80, 1.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseInOutBack();
     }
 
     public void QuitButton()
@@ -109,6 +131,7 @@ public class MenuManager : Singleton<MenuManager>
 
     public void PlayButton()
     {
+        Time.timeScale = 1;
         AnimateBackground(0.5f);
         AnimateMainMenu(0);
     }
