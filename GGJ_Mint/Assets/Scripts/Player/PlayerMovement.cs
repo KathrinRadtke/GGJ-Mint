@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     // Hidden Variables
     [HideInInspector] public Rigidbody rb;
-
+    
     private void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
