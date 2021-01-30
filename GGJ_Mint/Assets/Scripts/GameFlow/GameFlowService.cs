@@ -118,7 +118,7 @@ public class GameFlowService : Singleton<GameFlowService>
         }
         else
         {
-            textBox.PlayText(notDoneMessage);
+           // textBox.PlayText(notDoneMessage);
         }
     }
 
