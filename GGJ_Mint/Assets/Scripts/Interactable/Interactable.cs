@@ -16,6 +16,8 @@ public class Interactable : MonoBehaviour
     public InteractableType m_Type;
     public float m_InteractableRange = 1.5f;
 
+    private bool isInteractable = true;
+
     // Hidden Variable
     [HideInInspector] private Outline outline;
 
@@ -28,6 +30,7 @@ public class Interactable : MonoBehaviour
 
     public void Interact()
     {
+        if (!isInteractable) return;
         if (m_Type == InteractableType.ACTIVITY)
         {
             InteractAnimation();
@@ -43,6 +46,12 @@ public class Interactable : MonoBehaviour
             // InteractAnimation();
             GameFlowService.Instance.GoToBed();
         }
+    }
+
+    public void Disable()
+    {
+        isInteractable = false;
+        outline.enabled = false;
     }
 
     private void InteractAnimation()

@@ -74,7 +74,6 @@ public class GameFlowService : Singleton<GameFlowService>
 
     public void SetMovementAndInteraction(bool setEnabled)
     {
-        Debug.Log("set movemente " + setEnabled);
         if (!setEnabled) playerMovement.StopWalkAnimation();
         playerMovement.enabled = setEnabled;
         playerInteractableManager.enabled = setEnabled;
@@ -168,10 +167,16 @@ public class GameFlowService : Singleton<GameFlowService>
 
     private void EnableDaysInteractables()
     {
-        foreach (GameObject gameObject in daysInteractables)
+        if (currentDayIndex > 0)
         {
-            gameObject.SetActive(false);
+            Interactable[] interactables =
+                daysInteractables[currentDayIndex - 1].GetComponentsInChildren<Interactable>();
+            foreach (var interactable in interactables)
+            {
+                interactable.Disable();
+            }
         }
+
         daysInteractables[currentDayIndex].SetActive(true);
     }
 
