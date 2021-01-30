@@ -20,9 +20,9 @@ MonoBehaviour:
   - no
   - no
   taskMessage:
-  - example 1
-  - example 2
-  - example 3
+  - Oh man! I'm so hungry again.
+  - Why do you always have to eat.
+  - But I never say no to delicious pasta.
   taskSound: Cooking
   activityMessage:
   - Sorry for neglecting you, my love.
