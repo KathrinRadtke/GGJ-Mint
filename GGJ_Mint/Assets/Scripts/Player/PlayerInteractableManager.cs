@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class PlayerInteractableManager : MonoBehaviour
 {
-    [HideInInspector] private Interactable[] m_InteractableArray;
+    public Interactable[] m_InteractableArray;
     [HideInInspector] private Interactable m_NearestInteractable;
 
     private void Start()
     {
+        foreach (Interactable inter in m_InteractableArray) inter.gameObject.GetComponent<Outline>().enabled = false;
+    }
+
+    private void LateUpdate()
+    {
         // Don't sue me for this garbage line
         m_InteractableArray = GameObject.FindObjectsOfType<Interactable>();
-
-        foreach (Interactable inter in m_InteractableArray) inter.SetOutline(false);
     }
 
     void Update()
@@ -25,8 +28,12 @@ public class PlayerInteractableManager : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.E))
                 m_NearestInteractable.Interact();
-        } else
-            m_NearestInteractable.SetOutline(false);
+        }
+        else
+        {
+            foreach(Interactable inter in m_InteractableArray)
+                inter.SetOutline(false);
+        }
     }
 
     private bool isInteractableInRange()
@@ -43,7 +50,7 @@ public class PlayerInteractableManager : MonoBehaviour
             if (m_NearestInteractable == null) m_NearestInteractable = inter;
             else
             {
-                if (inter == m_NearestInteractable) continue;
+                if (inter == m_NearestInteractable || !inter.gameObject.activeSelf) continue;
 
                 if (Vector3.Distance(inter.gameObject.transform.position, transform.position) < Vector3.Distance(m_NearestInteractable.gameObject.transform.position, transform.position))
                 {
