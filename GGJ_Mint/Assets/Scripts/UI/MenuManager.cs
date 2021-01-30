@@ -122,7 +122,6 @@ public class MenuManager : Singleton<MenuManager>
 
     public void AnimateBackground(float delay)
     {
-        Debug.Log(Mathf.FloorToInt(m_Background.transform.position.x));
         LeanTween.moveX(m_Background, Mathf.FloorToInt(m_Background.transform.position.x) == -81 ? -501 : -81, 1.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseInOutBack();
     }
 
