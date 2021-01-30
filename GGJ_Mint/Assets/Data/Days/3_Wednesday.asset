@@ -13,19 +13,26 @@ MonoBehaviour:
   m_Name: 3_Wednesday
   m_EditorClassIdentifier: 
   name: Wednesday
-  textMessage: Hey, how are you?
+  textMessage: Hi again A! We're going out for drinks tonight, if you're feeling
+    up to it. Maybe it would be good for you to have some fun and get your mind off
+    things.
   prompt: []
   answers:
   - no
   - no
   taskMessage:
-  - example 1
-  - example 2
-  - example 3
+  - Hi again A! We're going out for drinks tonight, if you're feeling up to it. Maybe
+    it would be good for you to have some fun and get your mind off things.
+  - ' I think I have some ramen. That would be simple and easy, but it''s a little
+    old. '
+  - That doesn't really go bad, does it?
   taskSound: 
   activityMessage:
-  - This shows some text.
-  - Much wow.
-  - Bla bla bla
+  - That's where my old art supplies went!
+  - I was such a great artist when I was younger, I don't know when I lost the ability
+    to see the world that way.
+  - 'I just can''t get anything to look right anymore. All of these sketches are
+    of her. '
+  - She was so beautiful, I didn't want to draw anything else.
   activitySound: 
   dayMusic: MX_Day3
