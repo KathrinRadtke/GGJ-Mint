@@ -4984,11 +4984,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1944040338, guid: 263cbecefc17b1642820183a922f2169, type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: cca3df89c076cbd4792672ac12390095,
-        type: 3}
     - target: {fileID: 524459381729492485, guid: 263cbecefc17b1642820183a922f2169,
         type: 3}
       propertyPath: m_Camera
@@ -4999,12 +4994,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: IngameCanvas
       objectReference: {fileID: 0}
-    - target: {fileID: 5956049691651915729, guid: 263cbecefc17b1642820183a922f2169,
-        type: 3}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: cca3df89c076cbd4792672ac12390095,
-        type: 3}
     - target: {fileID: 7231472800360792981, guid: 263cbecefc17b1642820183a922f2169,
         type: 3}
       propertyPath: m_Pivot.x
