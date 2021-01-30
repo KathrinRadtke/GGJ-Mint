@@ -40,6 +40,7 @@ public class Interactable : MonoBehaviour
         }
         else
         {
+            InteractAnimation();
             GameFlowService.Instance.GoToBed();
         }
     }

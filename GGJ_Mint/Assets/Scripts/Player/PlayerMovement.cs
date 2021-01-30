@@ -30,10 +30,10 @@ public class PlayerMovement : MonoBehaviour
         
         if (inputMovement != Vector3.zero) transform.rotation = Quaternion.LookRotation(inputMovement);
 
-        SetWalkAnimation(inputMovement);
+        SetWalkAnimation();
     }
 
-    private void SetWalkAnimation(Vector3 inputMovement)
+    private void SetWalkAnimation()
     {
         if (inputMovement != Vector3.zero)
         {
