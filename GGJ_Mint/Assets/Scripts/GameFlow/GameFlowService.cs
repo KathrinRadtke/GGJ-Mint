@@ -156,7 +156,7 @@ public class GameFlowService : Singleton<GameFlowService>
 
     private void StartDay(Day day)
     {
-        SoundManager.Instance.playMusic(day.dayMusic, 0.6f);
+        SoundManager.Instance.playMusic(day.dayMusic, 1f);
         textBox.PlayText(new[]{day.textMessage});
         if (currentDay.prompt != null && currentDay.prompt.Length > 0)
         {

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMessage: Hi A, i heard you and B broke up. I'm so sorry, you where such a nice
     couple.
-  prompt: Get out of bed?
+  prompt: []
   answers:
   - 
   - 
@@ -22,6 +22,9 @@ MonoBehaviour:
   - I look like shit. Who would want somebody with a face like this?
   - I should have stayed with her.
   - It doesn't matter anyway. I should at least brush my teeth.
+  taskSound: 
   activityMessage:
   - I don't know what to do.
   - I'll just go back to bed and watch Netflix.
+  activitySound: 
+  dayMusic: MX_Day2

@@ -38,19 +38,15 @@ public class SoundManager : Singleton<SoundManager>
 
         if (currentMusic != null && s != null)
         {
-            LeanTween.value(currentMusic.source.volume, 0, fadeDuration).setEaseInOutQuad().setOnUpdate((float val) =>
+            LeanTween.value(1, 0, fadeDuration).setEaseInOutQuad().setOnUpdate((float val) =>
             {
                 currentMusic.source.volume = val;
             });
 
-            float musicVolume;
-            s.mixerGroup.audioMixer.GetFloat("Music_Volume", out musicVolume);
-
-            Debug.Log("Music Mixer Volume: " + musicVolume);
-
-            LeanTween.value(0, musicVolume, fadeDuration).setEaseInOutQuad().setOnUpdate((float val) =>
+            s.source.Play();
+            LeanTween.value(0, 1, fadeDuration).setEaseInOutQuad().setOnUpdate((float val) =>
             {
-                currentMusic.source.volume = val;
+                s.source.volume = val;
             });
         }
 

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 7_Sunday
   m_EditorClassIdentifier: 
   textMessage: Hey, how are you?
-  prompt: Get out of bed?
+  prompt: []
   answers:
   - no
   - no
@@ -21,7 +21,10 @@ MonoBehaviour:
   - example 1
   - example 2
   - example 3
+  taskSound: 
   activityMessage:
   - This shows some text.
   - Much wow.
   - Bla bla bla
+  activitySound: 
+  dayMusic: AMB_Birds
