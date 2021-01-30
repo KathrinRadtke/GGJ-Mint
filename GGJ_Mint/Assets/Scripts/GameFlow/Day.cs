@@ -8,5 +8,7 @@ public class Day : ScriptableObject
     public string[] answers;
 
     public string[] taskMessage;
+    public string taskSound;
     public string[] activityMessage;
+    public string activitySound;
 }

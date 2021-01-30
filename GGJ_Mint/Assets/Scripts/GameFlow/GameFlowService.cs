@@ -39,6 +39,7 @@ public class GameFlowService : Singleton<GameFlowService>
         {
             textBox.PlayText(currentDay.taskMessage);
             textBox.onTextFinished += TaskFinished;
+            SoundManager.Instance.playSound(currentDay.taskSound);
         }
     }
 
@@ -54,6 +55,7 @@ public class GameFlowService : Singleton<GameFlowService>
         {
             textBox.PlayText(currentDay.activityMessage);
             textBox.onTextFinished += ActivtyFinished;
+            SoundManager.Instance.playSound(currentDay.activitySound);
         }
     }
 
