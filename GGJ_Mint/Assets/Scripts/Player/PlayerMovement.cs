@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     public float m_MovementSpeed = 1;
     public Animator m_Animator;
     Vector3 inputMovement;
+    public GameObject GFX;
 
    // Hidden Variables
    [HideInInspector] public Rigidbody rb;
@@ -20,22 +21,15 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         MovementInput();
-        AnimateCharacter();
-    }
-
-    public void AnimateCharacter()
-    {
-        if (inputMovement != Vector3.zero) m_Animator.SetBool("isMoving", true);
-        else m_Animator.SetBool("isMoving", false);
-
-        m_Animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
-        m_Animator.SetFloat("Vertical", Input.GetAxis("Vertical"));
     }
 
     public void MovementInput()
     {
-        inputMovement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        inputMovement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         transform.Translate(inputMovement * Time.deltaTime * m_MovementSpeed, Space.World);
+        
+        if (inputMovement != Vector3.zero) transform.rotation = Quaternion.LookRotation(inputMovement);
+
         SetWalkAnimation(inputMovement);
     }
 
