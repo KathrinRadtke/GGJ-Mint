@@ -12,6 +12,7 @@ public class CreditsManager : MonoBehaviour
 
     public void ReloadButton()
     {
+        SoundManager.Instance.playMusic("MX_Day2", 0.5f);
         SceneManager.LoadScene(0);
     }
 }
