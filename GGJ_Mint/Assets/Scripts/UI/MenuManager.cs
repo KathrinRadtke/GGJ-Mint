@@ -122,7 +122,8 @@ public class MenuManager : Singleton<MenuManager>
 
     public void AnimateBackground(float delay)
     {
-        LeanTween.moveX(m_Background, m_Background.transform.position.x == -80 ? -500 : -80, 1.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseInOutBack();
+        Debug.Log(Mathf.FloorToInt(m_Background.transform.position.x));
+        LeanTween.moveX(m_Background, Mathf.FloorToInt(m_Background.transform.position.x) == -81 ? -501 : -81, 1.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseInOutBack();
     }
 
     #endregion
@@ -137,7 +138,7 @@ public class MenuManager : Singleton<MenuManager>
     public void PlayButton()
     {
         Time.timeScale = 1;
-        AnimateBackground(0.5f);
+        AnimateBackground(0);
         AnimateMainMenu(0);
         StartCoroutine(StartGame());
     }
