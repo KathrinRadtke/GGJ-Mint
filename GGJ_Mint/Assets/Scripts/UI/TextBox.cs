@@ -15,7 +15,6 @@ public class TextBox : MonoBehaviour
     [SerializeField] private Text phoneText;
     [SerializeField] private Animator phoneAnimator;
     [SerializeField] private GameObject textBoxHolder;
-    [SerializeField] private GameObject phoneHolder;
 
     public delegate void OnTextFinished();
     public OnTextFinished onTextFinished;
@@ -43,7 +42,7 @@ public class TextBox : MonoBehaviour
             }
             else
             {
-                phoneHolder.SetActive(true);
+                phoneAnimator.SetTrigger("show");
             }
 
             enabled = true;
@@ -60,8 +59,15 @@ public class TextBox : MonoBehaviour
         if (currentTextIndex > currentText.Length - 1)
         {
             GameFlowService.Instance.SetMovementAndInteraction(true);
-            textBoxHolder.SetActive(false);
-            phoneHolder.SetActive(false);
+            if (textType == TextType.Subtitle)
+            {
+                textBoxHolder.SetActive(false);
+            }
+            else
+            {
+                phoneAnimator.SetTrigger("hide");
+            }
+
             enabled = false;
             currentTextIndex = -1;
             currentText = null;
