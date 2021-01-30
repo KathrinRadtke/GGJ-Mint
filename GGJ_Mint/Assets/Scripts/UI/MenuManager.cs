@@ -29,6 +29,7 @@ public class MenuManager : Singleton<MenuManager>
     // Hidden Vars
     private bool isMainMenuOpen = false;
     private bool isSettingsOpen = false;
+    private bool isAnimationRunning = false;
 
     private void Awake()
     {
@@ -46,7 +47,7 @@ public class MenuManager : Singleton<MenuManager>
     {
 
         // Open and Close Menu
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !isAnimationRunning)
         {
             if (isMainMenuOpen && Time.timeScale == 1)
             {
@@ -59,7 +60,7 @@ public class MenuManager : Singleton<MenuManager>
                 AnimateSettings(0);
                 AnimateMainMenu(1.1f);
             }
-        } else if (Input.GetKeyDown(KeyCode.Tab) && Time.timeScale == 1)
+        } else if (Input.GetKeyDown(KeyCode.Tab) && Time.timeScale == 1 && !isAnimationRunning)
         {
             if (!isMainMenuOpen && !isSettingsOpen)
             {
@@ -82,6 +83,7 @@ public class MenuManager : Singleton<MenuManager>
     public void AnimateMainMenu(float delay)
     {
         isMainMenuOpen = !isMainMenuOpen;
+        isAnimationRunning = true;
 
         LeanTween.scale(m_MainMenuTitle.gameObject, m_MainMenuTitle.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseOutBack().setOnComplete(() =>
         {
@@ -91,6 +93,7 @@ public class MenuManager : Singleton<MenuManager>
                 {
                     LeanTween.scale(m_QuitButton.gameObject, m_QuitButton.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
                     {
+                        isAnimationRunning = false;
                     });
                 });
             });
@@ -101,6 +104,7 @@ public class MenuManager : Singleton<MenuManager>
     {
         isSettingsOpen = !isSettingsOpen;
         m_SettingsManager.ChangeSliderStatus(isSettingsOpen);
+        isAnimationRunning = true;
 
         LeanTween.scale(m_SettingsTitle, m_SettingsTitle.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseOutBack().setOnComplete(() =>
         {
@@ -112,7 +116,7 @@ public class MenuManager : Singleton<MenuManager>
                     {
                         LeanTween.scale(m_Ampience, m_Ampience.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
                         {
-                            
+                            isAnimationRunning = false;
                         });
                     });
                 });
@@ -136,10 +140,13 @@ public class MenuManager : Singleton<MenuManager>
 
     public void PlayButton()
     {
-        Time.timeScale = 1;
-        AnimateBackground(0);
-        AnimateMainMenu(0);
-        StartCoroutine(StartGame());
+        if (!isAnimationRunning)
+        {
+            Time.timeScale = 1;
+            AnimateBackground(0);
+            AnimateMainMenu(0);
+            StartCoroutine(StartGame());
+        }
     }
 
     private IEnumerator StartGame()
@@ -150,8 +157,11 @@ public class MenuManager : Singleton<MenuManager>
 
     public void SettingsButton()
     {
-        AnimateMainMenu(0);
-        AnimateSettings(0.9f);
+        if (!isAnimationRunning)
+        {
+            AnimateMainMenu(0);
+            AnimateSettings(0.9f);
+        }
     }
 
     #endregion
