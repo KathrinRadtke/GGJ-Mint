@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 3_Wednesday
   m_EditorClassIdentifier: 
   name: Wednesday
-  textMessage: Hi again A! We're going out for drinks tonight, if you're feeling
-    up to it. Maybe it would be good for you to have some fun and get your mind off
+  textMessage: Hi again! We're going out for drinks tonight, if you're feeling up
+    to it. Maybe it would be good for you to have some fun and get your mind off
     things.
   prompt: []
   answers:
