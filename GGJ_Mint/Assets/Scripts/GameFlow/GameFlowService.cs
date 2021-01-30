@@ -1,9 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameFlowService : Singleton<GameFlowService>
 {
     [Header("References")]
     [SerializeField] private TextBox textBox;
+
+    [SerializeField] private Image fadeScreen;
 
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private PlayerInteractableManager playerInteractableManager;
@@ -11,6 +16,8 @@ public class GameFlowService : Singleton<GameFlowService>
         [Header("Settings")]
     [SerializeField] private Day[] days;
     [SerializeField] private GameObject[] daysInteractables;
+    [SerializeField] private float fadeTime = 0.5f;
+    [SerializeField] private float blackoutTime = 0.5f;
 
     [SerializeField] private string[] notDoneMessage = {"I'm not tired right now"};
 
@@ -22,9 +29,33 @@ public class GameFlowService : Singleton<GameFlowService>
     
     public void StartGame()
     {
+        StartCoroutine(FadeAndStartGame());
+    }
+
+    private IEnumerator FadeAndStartGame()
+    {
+        yield return new WaitForSeconds(0.5f);
+        float fadeTimer = 0;
+        
+        while (fadeTime > fadeTimer)
+        {
+            fadeTimer += Time.deltaTime;
+            fadeScreen.color = Color.Lerp(new Color(0,0,0, 0), Color.black, fadeTimer/fadeTime);
+            yield return null;
+        }
+        EnableDaysInteractables();
+        yield return new WaitForSeconds(blackoutTime);
+
+        fadeTimer = 0;
+        while (fadeTime > fadeTimer)
+        {
+            fadeTimer += Time.deltaTime;
+            fadeScreen.color = Color.Lerp(Color.black, new Color(0,0,0, 0), fadeTimer/fadeTime);
+            yield return null;
+        }
+        fadeScreen.color = new Color(0,0,0,0);
         currentDay = days[0];
         StartDay(currentDay);
-        EnableDaysInteractables();
     }
 
     public void SetMovementAndInteraction(bool setEnabled)
@@ -83,8 +114,33 @@ public class GameFlowService : Singleton<GameFlowService>
         currentTaskDone = false;
         currentActivityDone = false;
         currentDay = days[currentDayIndex];
+        StartCoroutine(FadeAndStartNextDay());
+    }
+
+    private IEnumerator FadeAndStartNextDay()
+    {
+        SetMovementAndInteraction(false);
+        float fadeTimer = 0;
+        while (fadeTime > fadeTimer)
+        {
+            fadeTimer += Time.deltaTime;
+            fadeScreen.color = Color.Lerp(new Color(0,0,0, 0), Color.black, fadeTimer/fadeTime);
+            yield return null;
+        }
+        yield return new WaitForSeconds(blackoutTime);
         EnableDaysInteractables();
+
+        fadeTimer = 0;
+        while (fadeTime > fadeTimer)
+        {
+            fadeTimer += Time.deltaTime;
+            fadeScreen.color = Color.Lerp(Color.black, new Color(0,0,0, 0), fadeTimer/fadeTime);
+            yield return null;
+        }
+        fadeScreen.color = new Color(0,0,0,0);
+
         StartDay(currentDay);
+        SetMovementAndInteraction(true);
     }
 
     private void EnableDaysInteractables()

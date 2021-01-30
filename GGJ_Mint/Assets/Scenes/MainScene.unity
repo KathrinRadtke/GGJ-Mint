@@ -1770,6 +1770,18 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &528380962 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7264136767501422877, guid: 263cbecefc17b1642820183a922f2169,
+    type: 3}
+  m_PrefabInstance: {fileID: 3477724489213621599}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &566247804
 GameObject:
   m_ObjectHideFlags: 0
@@ -4403,7 +4415,7 @@ PrefabInstance:
     - target: {fileID: 1927158957922005033, guid: 10d1f271eadc67d41a4c4096a5696e85,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.54
+      value: -1.69
       objectReference: {fileID: 0}
     - target: {fileID: 1927158957922005033, guid: 10d1f271eadc67d41a4c4096a5696e85,
         type: 3}
@@ -4413,7 +4425,7 @@ PrefabInstance:
     - target: {fileID: 1927158957922005033, guid: 10d1f271eadc67d41a4c4096a5696e85,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.97
       objectReference: {fileID: 0}
     - target: {fileID: 1927158957922005033, guid: 10d1f271eadc67d41a4c4096a5696e85,
         type: 3}
@@ -4464,18 +4476,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 750094959, guid: 263cbecefc17b1642820183a922f2169, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 750094960, guid: 263cbecefc17b1642820183a922f2169, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 750094960, guid: 263cbecefc17b1642820183a922f2169, type: 3}
-      propertyPath: playerMovement
-      value: 
-      objectReference: {fileID: 573875440}
     - target: {fileID: 524459381729492485, guid: 263cbecefc17b1642820183a922f2169,
         type: 3}
       propertyPath: m_Camera
@@ -4591,6 +4591,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7264136767501422877, guid: 263cbecefc17b1642820183a922f2169,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 263cbecefc17b1642820183a922f2169, type: 3}
 --- !u!1001 &4449173846738020871
@@ -4700,6 +4705,11 @@ PrefabInstance:
       propertyPath: textBox
       value: 
       objectReference: {fileID: 750094960}
+    - target: {fileID: 4652231970476534288, guid: ae06d7ddabe1cc84f9906ea8ac752222,
+        type: 3}
+      propertyPath: fadeScreen
+      value: 
+      objectReference: {fileID: 528380962}
     - target: {fileID: 4652231970476534288, guid: ae06d7ddabe1cc84f9906ea8ac752222,
         type: 3}
       propertyPath: playerMovement
