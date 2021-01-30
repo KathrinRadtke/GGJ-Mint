@@ -11,4 +11,6 @@ public class Day : ScriptableObject
     public string taskSound;
     public string[] activityMessage;
     public string activitySound;
+
+    public string dayMusic;
 }
