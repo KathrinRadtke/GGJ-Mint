@@ -35,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void SetWalkAnimation(Vector3 inputMovement)
     {
-        Debug.Log(inputMovement);
         if (inputMovement != Vector3.zero)
         {
             m_Animator.SetBool("isWalking", true);
