@@ -174,7 +174,7 @@ public class GameFlowService : Singleton<GameFlowService>
     {
         SoundManager.Instance.playMusic(day.dayMusic, 1f);
         SoundManager.Instance.playSound("CellphoneVibrate");
-        textBox.PlayText(new[]{day.textMessage});
+        textBox.PlayText(new[]{day.textMessage}, TextBox.TextType.Phone);
         if (currentDay.prompt != null && currentDay.prompt.Length > 0)
         {
             textBox.onTextFinished += PlayPrompt;
