@@ -158,14 +158,14 @@ MonoBehaviour:
     loop: 1
     source: {fileID: 0}
   - Name: MX_Day2
-    AudioClip: {fileID: 8300000, guid: a4eee834b26e69d41a745f3fce1d78ee, type: 3}
+    AudioClip: {fileID: 8300000, guid: 8a2aa1ad2a0fca741b93bc57ebd50351, type: 3}
     mixerGroup: {fileID: -3035194350459163786, guid: cd9753436728016489e6b319a485743b,
       type: 2}
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - Name: MX_Day3
-    AudioClip: {fileID: 8300000, guid: 2cac2f0fdb7e6b846b68409743e04455, type: 3}
+    AudioClip: {fileID: 8300000, guid: 7a7d70df0a2f45d4fb1c7b81d260b20c, type: 3}
     mixerGroup: {fileID: -3035194350459163786, guid: cd9753436728016489e6b319a485743b,
       type: 2}
     pitch: 1
