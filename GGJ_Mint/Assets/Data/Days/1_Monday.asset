@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Monday
   textMessage: Hey, how are you?
   prompt:
-  - No way I'm getting up today.
+  - Get out of bed? Better not.
   answers: []
   taskMessage: []
   taskSound: 

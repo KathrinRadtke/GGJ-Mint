@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 2_Tuesday
   m_EditorClassIdentifier: 
   name: Tuesday
-  textMessage: Hi A, i heard you and B broke up. I'm so sorry, I thought things were
+  textMessage: Hey, i heard you and B broke up. I'm so sorry, I thought things were
     going really well with you two.
   prompt: []
   answers:
