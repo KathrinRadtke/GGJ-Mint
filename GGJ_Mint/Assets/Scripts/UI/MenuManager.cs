@@ -134,6 +134,13 @@ public class MenuManager : Singleton<MenuManager>
         Time.timeScale = 1;
         AnimateBackground(0.5f);
         AnimateMainMenu(0);
+        StartCoroutine(StartGame());
+    }
+
+    private IEnumerator StartGame()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GameFlowService.Instance.StartGame();
     }
 
     public void SettingsButton()

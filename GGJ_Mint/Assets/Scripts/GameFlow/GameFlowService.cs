@@ -20,7 +20,7 @@ public class GameFlowService : Singleton<GameFlowService>
     private bool currentTaskDone = false;
     private bool currentActivityDone = false;
     
-    private void Start()
+    public void StartGame()
     {
         currentDay = days[0];
         StartDay(currentDay);
