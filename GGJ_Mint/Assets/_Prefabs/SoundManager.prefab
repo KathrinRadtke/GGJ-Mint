@@ -44,3 +44,81 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Mixer: {fileID: 24100000, guid: cd9753436728016489e6b319a485743b, type: 2}
+  m_Sounds:
+  - Name: Piano
+    AudioClip: {fileID: 8300000, guid: 6befa8631e9bae54a8f30ccd3118bc15, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: Book
+    AudioClip: {fileID: 8300000, guid: 498879ad426a9e1448c7f7e9ccc6f246, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: BrushingTeeth
+    AudioClip: {fileID: 8300000, guid: 6dd7d074322e6a84a8b6bb5a25b2dc38, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: CellphoneVibrate
+    AudioClip: {fileID: 8300000, guid: c53ff5d1186d7ce4398b635820e1a310, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: Cooking
+    AudioClip: {fileID: 8300000, guid: 7a326a728104fa14c9bd1629bb61cb95, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: Dishes
+    AudioClip: {fileID: 8300000, guid: 7db4f64dd1b25bf4d82e8ec8c27ff86b, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: FrontDoor
+    AudioClip: {fileID: 8300000, guid: 55eea16582eb96842941787698002c71, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: Laundry
+    AudioClip: {fileID: 8300000, guid: ab73e4e0325cfd748bb00d11eea2fdfb, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: RamenSlurp
+    AudioClip: {fileID: 8300000, guid: d1b241e218082ed45ae49a689358cbe3, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: Shower
+    AudioClip: {fileID: 8300000, guid: b718dafdc18e439439f5cd5ff56bc1a3, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: Movie
+    AudioClip: {fileID: 8300000, guid: 1a74c20da63c15f4db32c74f51ceda14, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

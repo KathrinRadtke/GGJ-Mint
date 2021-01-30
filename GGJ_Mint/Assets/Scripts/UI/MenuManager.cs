@@ -89,7 +89,6 @@ public class MenuManager : Singleton<MenuManager>
                 {
                     LeanTween.scale(m_QuitButton.gameObject, m_QuitButton.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
                     {
-                        
                     });
                 });
             });
