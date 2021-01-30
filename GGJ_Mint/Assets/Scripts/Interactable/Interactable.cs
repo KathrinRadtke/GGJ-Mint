@@ -47,8 +47,10 @@ public class Interactable : MonoBehaviour
 
     private void InteractAnimation()
     {
-        LeanTween.scale(gameObject, new Vector3(0.7f, 1.3f, 1), 0.3f).setEaseInOutBack().setOnComplete(() => {
-            LeanTween.scale(gameObject, Vector3.one, 0.3f).setEaseOutBounce();
+        Vector3 oldScale = gameObject.transform.localScale;
+
+        LeanTween.scale(gameObject, new Vector3(oldScale.x - oldScale.x / 10, oldScale.y + oldScale.y / 10 * 2, oldScale.z), 0.3f).setEaseInOutBack().setOnComplete(() => {
+            LeanTween.scale(gameObject, oldScale, 0.3f).setEaseOutBounce();
         });
     }
 
