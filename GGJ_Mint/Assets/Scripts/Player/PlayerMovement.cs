@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        m_Animator = gameObject.GetComponent<Animator>();
     }
 
     void Update()
@@ -37,5 +36,19 @@ public class PlayerMovement : MonoBehaviour
     {
         inputMovement = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         transform.Translate(inputMovement * Time.deltaTime * m_MovementSpeed, Space.World);
+        SetWalkAnimation(inputMovement);
+    }
+
+    private void SetWalkAnimation(Vector3 inputMovement)
+    {
+        Debug.Log(inputMovement);
+        if (inputMovement != Vector3.zero)
+        {
+            m_Animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            m_Animator.SetBool("isWalking", false);
+        }
     }
 }
