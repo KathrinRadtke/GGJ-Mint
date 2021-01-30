@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fadb8d9b93b0ed449b6289a401fd9c6, type: 3}
   m_Name: 7_Sunday
   m_EditorClassIdentifier: 
+  name: Sunday
   textMessage: Hey, how are you?
   prompt: []
   answers:

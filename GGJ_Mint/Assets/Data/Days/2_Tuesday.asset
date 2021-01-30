@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fadb8d9b93b0ed449b6289a401fd9c6, type: 3}
   m_Name: 2_Tuesday
   m_EditorClassIdentifier: 
+  name: Tuesday
   textMessage: Hi A, i heard you and B broke up. I'm so sorry, you where such a nice
     couple.
   prompt: []

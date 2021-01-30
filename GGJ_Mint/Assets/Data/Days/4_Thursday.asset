@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fadb8d9b93b0ed449b6289a401fd9c6, type: 3}
   m_Name: 4_Thursday
   m_EditorClassIdentifier: 
+  name: Thursday
   textMessage: Hey, how are you?
-  prompt: Get out of bed?
+  prompt: []
   answers:
   - no
   - no
@@ -21,7 +22,9 @@ MonoBehaviour:
   - example 1
   - example 2
   - example 3
+  taskSound: 
   activityMessage:
   - This shows some text.
   - Much wow.
   - Bla bla bla
+  activitySound: 

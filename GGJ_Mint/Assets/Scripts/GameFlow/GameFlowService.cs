@@ -14,6 +14,8 @@ public class GameFlowService : Singleton<GameFlowService>
 
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private PlayerInteractableManager playerInteractableManager;
+    [SerializeField] private Animator dayTextAnimator;
+    [SerializeField] private Text dayText;
 
         [Header("Settings")]
     [SerializeField] private Day[] days;
@@ -36,6 +38,8 @@ public class GameFlowService : Singleton<GameFlowService>
 
     private IEnumerator FadeAndStartGame()
     {
+        currentDay = days[0];
+
         yield return new WaitForSeconds(0.5f);
         float fadeTimer = 0;
         
@@ -48,6 +52,8 @@ public class GameFlowService : Singleton<GameFlowService>
         EnableDaysInteractables();
         yield return new WaitForSeconds(blackoutTime);
 
+        dayTextAnimator.SetTrigger("show");
+        dayText.text = currentDay.name;
         fadeTimer = 0;
         while (fadeTime > fadeTimer)
         {
@@ -56,7 +62,11 @@ public class GameFlowService : Singleton<GameFlowService>
             yield return null;
         }
         fadeScreen.color = new Color(0,0,0,0);
-        currentDay = days[0];
+       
+        
+        yield return new WaitForSeconds(fadeTime);
+        dayTextAnimator.SetTrigger("hide");
+        
         StartDay(currentDay);
     }
 
@@ -131,6 +141,9 @@ public class GameFlowService : Singleton<GameFlowService>
         }
         yield return new WaitForSeconds(blackoutTime);
         EnableDaysInteractables();
+        
+        dayTextAnimator.SetTrigger("show");
+        dayText.text = currentDay.name;
 
         fadeTimer = 0;
         while (fadeTime > fadeTimer)
@@ -140,6 +153,9 @@ public class GameFlowService : Singleton<GameFlowService>
             yield return null;
         }
         fadeScreen.color = new Color(0,0,0,0);
+        
+        yield return new WaitForSeconds(fadeTime);
+        dayTextAnimator.SetTrigger("hide");
 
         StartDay(currentDay);
         SetMovementAndInteraction(true);
