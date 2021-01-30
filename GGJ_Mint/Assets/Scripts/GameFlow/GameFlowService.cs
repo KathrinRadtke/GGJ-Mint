@@ -72,6 +72,7 @@ public class GameFlowService : Singleton<GameFlowService>
 
     public void SetMovementAndInteraction(bool setEnabled)
     {
+        if (!setEnabled) playerMovement.StopWalkAnimation();
         playerMovement.enabled = setEnabled;
         playerInteractableManager.enabled = setEnabled;
     }
