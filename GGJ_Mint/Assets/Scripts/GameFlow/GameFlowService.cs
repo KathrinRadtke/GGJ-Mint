@@ -30,6 +30,8 @@ public class GameFlowService : Singleton<GameFlowService>
     
     private bool currentTaskDone = false;
     private bool currentActivityDone = false;
+
+    
     
     public void StartGame()
     {
