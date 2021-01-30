@@ -112,6 +112,7 @@ public class GameFlowService : Singleton<GameFlowService>
     {
         if (currentTaskDone && currentActivityDone)
         {
+            SoundManager.Instance.playSound("Bed");
             StartNextDay();
         }
         else
