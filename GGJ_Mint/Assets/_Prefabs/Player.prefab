@@ -70,6 +70,7 @@ MonoBehaviour:
   m_MovementSpeed: 1
   m_Animator: {fileID: 1616401366}
   GFX: {fileID: 1621239847935888023}
+  waitTimeBetweenStepSound: 0.66
   rb: {fileID: 0}
 --- !u!136 &1927158957922005036
 CapsuleCollider:

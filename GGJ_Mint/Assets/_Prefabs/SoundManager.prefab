@@ -129,6 +129,20 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - Name: Drawing
+    AudioClip: {fileID: 8300000, guid: 43a3742b3d6b41342a977090ad109d1e, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: Bed
+    AudioClip: {fileID: 8300000, guid: b630e0ebf44fd57449392055941a3e62, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   - Name: AMB_Birds
     AudioClip: {fileID: 8300000, guid: f78be9fe48e632b48a1a4f53c4af625e, type: 3}
     mixerGroup: {fileID: -3035194350459163786, guid: cd9753436728016489e6b319a485743b,
@@ -156,4 +170,46 @@ MonoBehaviour:
       type: 2}
     pitch: 1
     loop: 1
+    source: {fileID: 0}
+  - Name: foodstep1
+    AudioClip: {fileID: 8300000, guid: ddf3fda0ec959424daa76a517eafe8c1, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: foodstep2
+    AudioClip: {fileID: 8300000, guid: b4c779c8c1ea7844193da181c21e2483, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: foodstep3
+    AudioClip: {fileID: 8300000, guid: 5d0cedbdde42a5046a1757e9847e870c, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: foodstep4
+    AudioClip: {fileID: 8300000, guid: cb231a8129b06a442b59a3f19fc3f0cb, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: foodstep5
+    AudioClip: {fileID: 8300000, guid: 40217f10b4674d14b8f6d5a331f17d60, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - Name: foodstep6
+    AudioClip: {fileID: 8300000, guid: 339ce48fcceec5742bf13829afa52e88, type: 3}
+    mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 0
     source: {fileID: 0}
