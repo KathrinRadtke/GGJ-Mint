@@ -13,19 +13,16 @@ MonoBehaviour:
   m_Name: 7_Sunday
   m_EditorClassIdentifier: 
   name: Sunday
-  textMessage: Hey, how are you?
+  textMessage: '"Hey, I heard about the thing with B. I know you are sad. But I''m
+    taking you out for dinner tonight. I''ll be there at 6.'
   prompt: []
   answers:
   - no
   - no
   taskMessage:
-  - example 1
-  - example 2
-  - example 3
-  taskSound: 
+  - 'I''ll feel more like myself again when I''m all clean and wearing fresh clothes. '
+  taskSound: Shower
   activityMessage:
-  - This shows some text.
-  - Much wow.
-  - Bla bla bla
-  activitySound: 
+  - I can't even remember the last time I went outside.
+  activitySound: FrontDoor
   dayMusic: AMB_Birds

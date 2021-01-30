@@ -13,18 +13,21 @@ MonoBehaviour:
   m_Name: 5_Friday
   m_EditorClassIdentifier: 
   name: Friday
-  textMessage: Hey, how are you?
+  textMessage: Miss you <3 Call me when you have the time. Love, mom.
   prompt: []
   answers:
   - no
   - no
   taskMessage:
-  - example 1
-  - example 2
-  - example 3
-  taskSound: 
+  - I've been wearing the same thing all week, I really should do laundry.
+  - My parents would be so worried if they saw me like this. I wish they were here.
+  taskSound: Laundry
   activityMessage:
-  - This shows some text.
-  - Much wow.
-  - Bla bla bla
-  activitySound: 
+  - My journal. It felt so good to finish the day by spilling all my thoughts onto
+    the page, my head was clearer.
+  - The last entries seem to be about how excited I was when she first moved in.
+  - But then she said I couldn't play the piano when she was home because piano music
+    made her sad.
+  - 'She said I went out with my friends too much instead of her. '
+  activitySound: Book
+  dayMusic: 

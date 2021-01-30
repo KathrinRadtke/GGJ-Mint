@@ -26,7 +26,7 @@ MonoBehaviour:
   - ' I think I have some ramen. That would be simple and easy, but it''s a little
     old. '
   - That doesn't really go bad, does it?
-  taskSound: 
+  taskSound: RamenSlurp
   activityMessage:
   - That's where my old art supplies went!
   - I was such a great artist when I was younger, I don't know when I lost the ability
@@ -34,5 +34,5 @@ MonoBehaviour:
   - 'I just can''t get anything to look right anymore. All of these sketches are
     of her. '
   - She was so beautiful, I didn't want to draw anything else.
-  activitySound: 
+  activitySound: Book
   dayMusic: MX_Day3

@@ -13,18 +13,21 @@ MonoBehaviour:
   m_Name: 4_Thursday
   m_EditorClassIdentifier: 
   name: Thursday
-  textMessage: Hey, how are you?
+  textMessage: Hey! How are you doing? Do you need me to pick up some food or something?
+    I'm here for you. Just let me know what you need..
   prompt: []
   answers:
   - no
   - no
   taskMessage:
-  - example 1
-  - example 2
-  - example 3
-  taskSound: 
+  - It's starting to smell a little in here.
+  - 'Maybe I''d actually cook real food if I had clean pots and plates. '
+  taskSound: Dishes
   activityMessage:
-  - This shows some text.
-  - Much wow.
-  - Bla bla bla
-  activitySound: 
+  - When was the last time I used the yoga mat?
+  - She suggested I should do weightlifting instead.
+  - '"You are too skinny. You''ll look so good if you had some more muscles."'
+  - So I did that instead, but after a while I stopped working out completely
+  - Should I try to get into yoga again?
+  activitySound: Yoga
+  dayMusic: 
