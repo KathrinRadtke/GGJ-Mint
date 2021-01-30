@@ -72,6 +72,7 @@ public class GameFlowService : Singleton<GameFlowService>
 
     public void SetMovementAndInteraction(bool setEnabled)
     {
+        Debug.Log("set movemente " + setEnabled);
         if (!setEnabled) playerMovement.StopWalkAnimation();
         playerMovement.enabled = setEnabled;
         playerInteractableManager.enabled = setEnabled;
@@ -159,8 +160,8 @@ public class GameFlowService : Singleton<GameFlowService>
         yield return new WaitForSeconds(fadeTime);
         dayTextAnimator.SetTrigger("hide");
 
-        StartDay(currentDay);
         SetMovementAndInteraction(true);
+        StartDay(currentDay);
     }
 
     private void EnableDaysInteractables()

@@ -3837,9 +3837,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 573875441}
   minPos: -4.4
-  minRotation: 25
+  minRotation: 16
   maxPos: 4.4
-  maxRotation: 30
+  maxRotation: 23
 --- !u!1 &965745727
 GameObject:
   m_ObjectHideFlags: 0
