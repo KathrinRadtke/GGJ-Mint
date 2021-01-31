@@ -19,6 +19,7 @@ public class Interactable : MonoBehaviour
     private bool isInteractable = true;
     [SerializeField] private GameObject buttonPromt;
     [SerializeField] private GameObject sparcles;
+    [SerializeField] private GameObject disableOnInteract;
 
     // Hidden Variable
     [HideInInspector] private Outline outline;
@@ -54,6 +55,13 @@ public class Interactable : MonoBehaviour
             // InteractAnimation();
             GameFlowService.Instance.GoToBed();
         }
+
+        if (disableOnInteract != null)
+        {
+            disableOnInteract.SetActive(false);
+        }
+        buttonPromt.SetActive(false);
+        sparcles.SetActive(false);
     }
 
     public void EnableButtonPromt(bool active)

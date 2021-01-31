@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657803, g: 0.49641407, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465778, g: 0.49641377, b: 0.574816, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2699,6 +2699,7 @@ MonoBehaviour:
   m_InteractableRange: 2.5
   buttonPromt: {fileID: 0}
   sparcles: {fileID: 0}
+  disableOnInteract: {fileID: 0}
 --- !u!114 &425799453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3913,7 +3914,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6e-45, y: 1.0542327e-38, z: 4.5905e-41, w: 0}
+  m_BoundingSphereOverride: {x: 0, y: 1.0542327e-38, z: 4.5905e-41, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -7420,6 +7421,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c41ec1a0753b69048bd3586b5a0fbdf6, type: 3}
+--- !u!1 &1541880751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c41ec1a0753b69048bd3586b5a0fbdf6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1541880750}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1543236442 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1543236442, guid: 263cbecefc17b1642820183a922f2169,
@@ -8788,6 +8795,10 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1343532618, guid: 38b17f4f8680da84e9bf4468995d6d11, type: 3}
+      propertyPath: disableOnInteract
+      value: 
+      objectReference: {fileID: 1541880751}
     - target: {fileID: 1644692588303592538, guid: 38b17f4f8680da84e9bf4468995d6d11,
         type: 3}
       propertyPath: m_RootOrder
@@ -9809,6 +9820,10 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1343532618, guid: 38b17f4f8680da84e9bf4468995d6d11, type: 3}
+      propertyPath: disableOnInteract
+      value: 
+      objectReference: {fileID: 1835249386}
     - target: {fileID: 1644692588303592538, guid: 38b17f4f8680da84e9bf4468995d6d11,
         type: 3}
       propertyPath: m_RootOrder
