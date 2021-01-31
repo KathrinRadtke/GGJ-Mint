@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465778, g: 0.49641377, b: 0.574816, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657803, g: 0.49641407, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -598,6 +598,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1496996743, guid: 113db504a87f59144a37a9e8707e18e0, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4167841884160840301, guid: 113db504a87f59144a37a9e8707e18e0,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -682,36 +686,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167841884408328213, guid: 113db504a87f59144a37a9e8707e18e0,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167841884408328213, guid: 113db504a87f59144a37a9e8707e18e0,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167841884408328213, guid: 113db504a87f59144a37a9e8707e18e0,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167841884408328213, guid: 113db504a87f59144a37a9e8707e18e0,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 1597.7683
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167841884408328213, guid: 113db504a87f59144a37a9e8707e18e0,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 707.4485
-      objectReference: {fileID: 0}
-    - target: {fileID: 4167841884408328213, guid: 113db504a87f59144a37a9e8707e18e0,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.79248047
       objectReference: {fileID: 0}
     - target: {fileID: 4167841884458780422, guid: 113db504a87f59144a37a9e8707e18e0,
         type: 3}
@@ -1048,11 +1022,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4167841886109530774, guid: 113db504a87f59144a37a9e8707e18e0,
-        type: 3}
-      propertyPath: backgroundAnimator
-      value: 
-      objectReference: {fileID: 1496996743}
     - target: {fileID: 4167841886109530777, guid: 113db504a87f59144a37a9e8707e18e0,
         type: 3}
       propertyPath: m_Name
@@ -6172,31 +6141,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481744314}
   m_Mesh: {fileID: 3507378654392049279, guid: e4b34d30faa2eed45b75f3f845f50df3, type: 3}
---- !u!1 &1496996742 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4167841884408328212, guid: 113db504a87f59144a37a9e8707e18e0,
-    type: 3}
-  m_PrefabInstance: {fileID: 107479157}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1496996743
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1496996742}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9a65833f8db2b3d46bd7693fb9713467, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 2
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1517582477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8786,71 +8730,9 @@ PrefabInstance:
       objectReference: {fileID: 1848161941}
     - target: {fileID: 4652231970476534288, guid: ae06d7ddabe1cc84f9906ea8ac752222,
         type: 3}
-      propertyPath: days.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652231970476534288, guid: ae06d7ddabe1cc84f9906ea8ac752222,
-        type: 3}
-      propertyPath: days.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 012116dce3b46f240b3b8757d5266f57,
-        type: 2}
-    - target: {fileID: 4652231970476534288, guid: ae06d7ddabe1cc84f9906ea8ac752222,
-        type: 3}
-      propertyPath: days.Array.data[1]
-      value: 
-      objectReference: {fileID: 11400000, guid: 30e7e7c60833ad1419babe918cec8cdf,
-        type: 2}
-    - target: {fileID: 4652231970476534288, guid: ae06d7ddabe1cc84f9906ea8ac752222,
-        type: 3}
-      propertyPath: days.Array.data[2]
-      value: 
-      objectReference: {fileID: 11400000, guid: da717535de10ac949a7c1d32a1802f31,
-        type: 2}
-    - target: {fileID: 4652231970476534288, guid: ae06d7ddabe1cc84f9906ea8ac752222,
-        type: 3}
-      propertyPath: days.Array.data[3]
-      value: 
-      objectReference: {fileID: 11400000, guid: 242aa734625d1674c9c604b7913470e3,
-        type: 2}
-    - target: {fileID: 4652231970476534288, guid: ae06d7ddabe1cc84f9906ea8ac752222,
-        type: 3}
-      propertyPath: days.Array.data[4]
-      value: 
-      objectReference: {fileID: 11400000, guid: 4eceb09516a266c4287f1550e89a567a,
-        type: 2}
-    - target: {fileID: 4652231970476534288, guid: ae06d7ddabe1cc84f9906ea8ac752222,
-        type: 3}
-      propertyPath: days.Array.data[5]
-      value: 
-      objectReference: {fileID: 11400000, guid: 4b4d255de69aa9f49904ed0b68e9b1c2,
-        type: 2}
-    - target: {fileID: 4652231970476534288, guid: ae06d7ddabe1cc84f9906ea8ac752222,
-        type: 3}
-      propertyPath: days.Array.data[6]
-      value: 
-      objectReference: {fileID: 11400000, guid: ef2e6943ae16522449fee32bdf26f684,
-        type: 2}
-    - target: {fileID: 4652231970476534288, guid: ae06d7ddabe1cc84f9906ea8ac752222,
-        type: 3}
-      propertyPath: notDoneMessage.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652231970476534288, guid: ae06d7ddabe1cc84f9906ea8ac752222,
-        type: 3}
       propertyPath: playerInteractableManager
       value: 
       objectReference: {fileID: 573875435}
-    - target: {fileID: 4652231970476534288, guid: ae06d7ddabe1cc84f9906ea8ac752222,
-        type: 3}
-      propertyPath: daysInteractables.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4652231970476534288, guid: ae06d7ddabe1cc84f9906ea8ac752222,
-        type: 3}
-      propertyPath: notDoneMessage.Array.data[0]
-      value: I'm not tired right now.
-      objectReference: {fileID: 0}
     - target: {fileID: 4652231970476534288, guid: ae06d7ddabe1cc84f9906ea8ac752222,
         type: 3}
       propertyPath: daysInteractables.Array.data[0]

@@ -804,6 +804,7 @@ GameObject:
   - component: {fileID: 4167841884408328213}
   - component: {fileID: 4167841884408328215}
   - component: {fileID: 4167841884408328214}
+  - component: {fileID: 1496996743}
   m_Layer: 0
   m_Name: UI_Image_Background
   m_TagString: Untagged
@@ -826,10 +827,10 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 10}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1159.116, y: 0}
-  m_SizeDelta: {x: -322.2317, y: 300}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 707.4485, y: -0.79248047}
+  m_SizeDelta: {x: 1597.7683, y: 300}
+  m_Pivot: {x: 1, y: 0}
 --- !u!222 &4167841884408328215
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -868,6 +869,25 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &1496996743
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4167841884408328212}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9a65833f8db2b3d46bd7693fb9713467, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4167841884458780421
 GameObject:
   m_ObjectHideFlags: 0
@@ -3729,6 +3749,7 @@ MonoBehaviour:
   m_Background: {fileID: 4167841884408328212}
   m_MainMenuArea: {fileID: 4167841884380077633}
   m_SettingsArea: {fileID: 4167841884676630634}
+  backgroundAnimator: {fileID: 1496996743}
   m_MainMenuTitle: {fileID: 4167841885333292133}
   m_PlayButton: {fileID: 4167841884160840300}
   m_SettingsButton: {fileID: 4167841885463208278}

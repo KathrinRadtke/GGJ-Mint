@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : Singleton<MenuManager>
 {
@@ -12,7 +13,8 @@ public class MenuManager : Singleton<MenuManager>
     public GameObject m_MainMenuArea;
     public GameObject m_SettingsArea;
 
-    [Header("Main Menu Objects")] [SerializeField]
+    [Header("Main Menu Objects")]
+    [SerializeField]
     private Animator backgroundAnimator;
     public GameObject m_MainMenuTitle;
     public GameObject m_PlayButton;
@@ -40,64 +42,64 @@ public class MenuManager : Singleton<MenuManager>
     private void Init()
     {
         Time.timeScale = 0;
-        //AnimateBackground(0);
-        backgroundAnimator.SetTrigger("show");
 
-        AnimateMainMenu(0);
-      
+        AnimateBackground(0, true);
+        AnimateMainMenu(0, true);
+
     }
 
     private void Update()
     {
+        InputManagement();
+    }
 
-        // Open and Close Menu
-        if (Input.GetKeyDown(KeyCode.Escape) && !isAnimationRunning)
+    public void InputManagement()
+    {
+        if ((Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Tab)) && !isAnimationRunning)
         {
-            if (isMainMenuOpen && Time.timeScale == 1)
+            if (Time.timeScale == 1)
             {
-                AnimateMainMenu(0);
-                AnimateBackground(0.5f);
-
-            }
-
-            if (isSettingsOpen)
+                if (isMainMenuOpen && !isSettingsOpen)
+                {
+                    AnimateBackground(0.5f, false);
+                    AnimateMainMenu(0, false);
+                } else if (isSettingsOpen && !isMainMenuOpen)
+                {
+                    AnimateSettings(0, false);
+                    AnimateMainMenu(0.5f, true);
+                } else if (!isMainMenuOpen && !isSettingsOpen)
+                {
+                    AnimateBackground(0, true);
+                    AnimateMainMenu(0.5f, true);
+                }
+            } else if (Time.timeScale == 0)
             {
-                AnimateSettings(0);
-                AnimateMainMenu(1.1f);
-            }
-        } else if (Input.GetKeyDown(KeyCode.Tab) && Time.timeScale == 1 && !isAnimationRunning)
-        {
-            if (!isMainMenuOpen && !isSettingsOpen)
-            {
-                AnimateBackground(0);
-                AnimateMainMenu(0.5f);
-            } else if (!isMainMenuOpen && isSettingsOpen)
-            {
-                AnimateSettings(0);
-                AnimateMainMenu(1.1f);
-            } else if (isMainMenuOpen && !isSettingsOpen)
-            {
-                AnimateMainMenu(0);
-                AnimateBackground(0.5f);
+                if (isSettingsOpen && !isMainMenuOpen)
+                {
+                    AnimateSettings(0, false);
+                    AnimateMainMenu(0.5f, true);
+                }
             }
         }
     }
 
     #region Menu Animations
 
-    public void AnimateMainMenu(float delay)
+    public void AnimateMainMenu(float delay, bool active)
     {
-        isMainMenuOpen = !isMainMenuOpen;
+        Vector3 scale = active ? Vector3.one : Vector3.zero;
+
         isAnimationRunning = true;
 
-        LeanTween.scale(m_MainMenuTitle.gameObject, m_MainMenuTitle.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseOutBack().setOnComplete(() =>
+        LeanTween.scale(m_MainMenuTitle.gameObject, scale, 0.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseOutBack().setOnComplete(() =>
         {
-            LeanTween.scale(m_PlayButton.gameObject, m_PlayButton.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
+            LeanTween.scale(m_PlayButton.gameObject, scale, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
             {
-                LeanTween.scale(m_SettingsButton.gameObject, m_SettingsButton.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
+                LeanTween.scale(m_SettingsButton.gameObject, scale, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
                 {
-                    LeanTween.scale(m_QuitButton.gameObject, m_QuitButton.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
+                    LeanTween.scale(m_QuitButton.gameObject, scale, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
                     {
+                        isMainMenuOpen = active;
                         isAnimationRunning = false;
                     });
                 });
@@ -105,22 +107,23 @@ public class MenuManager : Singleton<MenuManager>
         });
     }
 
-    public void AnimateSettings(float delay)
+    public void AnimateSettings(float delay, bool active)
     {
-        isSettingsOpen = !isSettingsOpen;
-        m_SettingsManager.ChangeSliderStatus(isSettingsOpen);
+        Vector3 scale = active ? Vector3.one : Vector3.zero;
+        m_SettingsManager.ChangeSliderStatus(active);
         isAnimationRunning = true;
 
-        LeanTween.scale(m_SettingsTitle, m_SettingsTitle.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseOutBack().setOnComplete(() =>
+        LeanTween.scale(m_SettingsTitle, scale, 0.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseOutBack().setOnComplete(() =>
         {
-            LeanTween.scale(m_Master, m_Master.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
+            LeanTween.scale(m_Master, scale, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
             {
-                LeanTween.scale(m_Music, m_Music.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
+                LeanTween.scale(m_Music, scale, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
                 {
-                    LeanTween.scale(m_SFX, m_SFX.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
+                    LeanTween.scale(m_SFX, scale, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
                     {
-                        LeanTween.scale(m_Ampience, m_Ampience.transform.localScale == Vector3.one ? Vector3.zero : Vector3.one, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
+                        LeanTween.scale(m_Ampience, scale, 0.2f).setIgnoreTimeScale(true).setEaseOutBack().setOnComplete(() =>
                         {
+                            isSettingsOpen = active;
                             isAnimationRunning = false;
                         });
                     });
@@ -129,10 +132,17 @@ public class MenuManager : Singleton<MenuManager>
         });
     }
 
-    public void AnimateBackground(float delay)
+    public void AnimateBackground(float delay, bool active)
     {
-        Debug.Log("animarte background");
-        if (isMainMenuOpen)
+        
+        float xPos = active ? -250 : -2000;
+        LeanTween.moveLocalX(m_Background, xPos, 1.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseInOutBack();
+
+        
+        Debug.Log("animarte background " + xPos);
+
+        /*
+        if (active)
         {
             backgroundAnimator.SetTrigger("show");
         }
@@ -140,8 +150,8 @@ public class MenuManager : Singleton<MenuManager>
         {
             backgroundAnimator.SetTrigger("hide");
         }
+        */
 
-        //LeanTween.moveX(m_Background, Mathf.FloorToInt(m_Background.transform.position.x) == -81 ? -501 : -81, 1.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseInOutBack();
     }
 
     #endregion
@@ -155,11 +165,15 @@ public class MenuManager : Singleton<MenuManager>
 
     public void PlayButton()
     {
-        if (!isAnimationRunning)
+        if (!isAnimationRunning && Time.timeScale == 1)
+        {
+            SceneManager.LoadScene(0);
+        }
+        else if (!isAnimationRunning && Time.timeScale == 0)
         {
             Time.timeScale = 1;
-            AnimateMainMenu(0);
-            AnimateBackground(0);
+            AnimateMainMenu(0, false);
+            AnimateBackground(0, false);
             StartCoroutine(StartGame());
         }
     }
@@ -174,8 +188,8 @@ public class MenuManager : Singleton<MenuManager>
     {
         if (!isAnimationRunning)
         {
-            AnimateMainMenu(0);
-            AnimateSettings(0.9f);
+            AnimateMainMenu(0, false);
+            AnimateSettings(0.9f, true);
         }
     }
 
