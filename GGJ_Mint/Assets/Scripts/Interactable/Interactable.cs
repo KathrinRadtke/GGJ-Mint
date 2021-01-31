@@ -16,7 +16,7 @@ public class Interactable : MonoBehaviour
     public InteractableType m_Type;
     public float m_InteractableRange = 1.5f;
 
-    private bool isInteractable = true;
+    public bool isInteractable = true;
     [SerializeField] private GameObject buttonPromt;
     [SerializeField] private GameObject sparcles;
     [SerializeField] private GameObject disableOnInteract;

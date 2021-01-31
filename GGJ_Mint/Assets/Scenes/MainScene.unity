@@ -7626,6 +7626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Type: 2
   m_InteractableRange: 2.5
+  isInteractable: 1
   buttonPromt: {fileID: 0}
   sparcles: {fileID: 174566542}
   disableOnInteract: {fileID: 0}
@@ -8843,7 +8844,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 5.89e-43, y: 2.73e-43, z: 0, w: -14.648216}
+  m_BoundingSphereOverride: {x: 4.5904e-41, y: 1.0542327e-38, z: 4.5905e-41, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -10504,6 +10505,10 @@ PrefabInstance:
     - target: {fileID: 1343532618, guid: 38b17f4f8680da84e9bf4468995d6d11, type: 3}
       propertyPath: m_Type
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1343532618, guid: 38b17f4f8680da84e9bf4468995d6d11, type: 3}
+      propertyPath: m_InteractableRange
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1644692588303592538, guid: 38b17f4f8680da84e9bf4468995d6d11,
         type: 3}
@@ -13916,6 +13921,10 @@ PrefabInstance:
       propertyPath: disableOnInteract
       value: 
       objectReference: {fileID: 1541880751}
+    - target: {fileID: 1343532618, guid: 38b17f4f8680da84e9bf4468995d6d11, type: 3}
+      propertyPath: m_InteractableRange
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1644692588303592538, guid: 38b17f4f8680da84e9bf4468995d6d11,
         type: 3}
       propertyPath: m_RootOrder
