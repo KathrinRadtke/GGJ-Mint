@@ -42,6 +42,11 @@ public class SoundManager : Singleton<SoundManager>
             LeanTween.value(1, 0, fadeDuration).setEaseInOutQuad().setOnUpdate((float val) =>
             {
                 currentMusic.source.volume = val;
+                if (val == 0)
+                {
+                    Debug.Log("stop current music");
+                    currentMusic.source.Stop();
+                }
             });
 
             s.source.Play();

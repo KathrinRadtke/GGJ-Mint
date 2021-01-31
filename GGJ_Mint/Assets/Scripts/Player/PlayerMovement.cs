@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         inputMovement = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         transform.Translate(inputMovement * Time.deltaTime * m_MovementSpeed, Space.World);
 
-        if (Vector3.Distance(inputMovement, Vector3.zero) > 0.1)
+        if (Vector3.Distance(inputMovement, Vector3.zero) > 0.3)
         {
             transform.rotation = Quaternion.LookRotation(inputMovement);
 

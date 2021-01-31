@@ -140,10 +140,6 @@ public class MenuManager : Singleton<MenuManager>
 
         float xPos = active ? -250 : -2000;
         LeanTween.moveLocalX(m_Background, xPos, 1.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseInOutBack();
-
-
-        Debug.Log("animarte background " + xPos);
-
         /*
         if (active)
         {

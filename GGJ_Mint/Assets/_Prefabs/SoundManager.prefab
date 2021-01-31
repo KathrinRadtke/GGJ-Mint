@@ -143,34 +143,6 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - Name: AMB_Birds
-    AudioClip: {fileID: 8300000, guid: f78be9fe48e632b48a1a4f53c4af625e, type: 3}
-    mixerGroup: {fileID: -3035194350459163786, guid: cd9753436728016489e6b319a485743b,
-      type: 2}
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - Name: AMB_Rain
-    AudioClip: {fileID: 8300000, guid: 351e51e28f5a53c4fabb3fa741445d60, type: 3}
-    mixerGroup: {fileID: -3035194350459163786, guid: cd9753436728016489e6b319a485743b,
-      type: 2}
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - Name: MX_Day2
-    AudioClip: {fileID: 8300000, guid: 8a2aa1ad2a0fca741b93bc57ebd50351, type: 3}
-    mixerGroup: {fileID: -3035194350459163786, guid: cd9753436728016489e6b319a485743b,
-      type: 2}
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
-  - Name: MX_Day3
-    AudioClip: {fileID: 8300000, guid: 7a7d70df0a2f45d4fb1c7b81d260b20c, type: 3}
-    mixerGroup: {fileID: -3035194350459163786, guid: cd9753436728016489e6b319a485743b,
-      type: 2}
-    pitch: 1
-    loop: 1
-    source: {fileID: 0}
   - Name: foodstep1
     AudioClip: {fileID: 8300000, guid: ddf3fda0ec959424daa76a517eafe8c1, type: 3}
     mixerGroup: {fileID: -8595347877804359228, guid: cd9753436728016489e6b319a485743b,
@@ -212,4 +184,53 @@ MonoBehaviour:
       type: 2}
     pitch: 1
     loop: 0
+    source: {fileID: 0}
+  - Name: AMB_Birds
+    AudioClip: {fileID: 8300000, guid: f78be9fe48e632b48a1a4f53c4af625e, type: 3}
+    mixerGroup: {fileID: -3035194350459163786, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - Name: AMB_Rain
+    AudioClip: {fileID: 8300000, guid: 351e51e28f5a53c4fabb3fa741445d60, type: 3}
+    mixerGroup: {fileID: -3035194350459163786, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - Name: MX_Day2
+    AudioClip: {fileID: 8300000, guid: 8a2aa1ad2a0fca741b93bc57ebd50351, type: 3}
+    mixerGroup: {fileID: -3035194350459163786, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - Name: MX_Day3
+    AudioClip: {fileID: 8300000, guid: 7a7d70df0a2f45d4fb1c7b81d260b20c, type: 3}
+    mixerGroup: {fileID: -3035194350459163786, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - Name: MX_Day4
+    AudioClip: {fileID: 8300000, guid: 02e63669ee498614f80c6175efe07e3d, type: 3}
+    mixerGroup: {fileID: -3035194350459163786, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - Name: MX_Day5
+    AudioClip: {fileID: 8300000, guid: e4f55c32c3e4e6444894200435e3c2de, type: 3}
+    mixerGroup: {fileID: -3035194350459163786, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - Name: MX_Day6
+    AudioClip: {fileID: 8300000, guid: cf6ddbeac9c5ef94da1aeb6f88df0f00, type: 3}
+    mixerGroup: {fileID: -3035194350459163786, guid: cd9753436728016489e6b319a485743b,
+      type: 2}
+    pitch: 1
+    loop: 1
     source: {fileID: 0}
