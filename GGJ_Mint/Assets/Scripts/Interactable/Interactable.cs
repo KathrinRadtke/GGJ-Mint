@@ -66,7 +66,10 @@ public class Interactable : MonoBehaviour
             buttonPromt.SetActive(false);
         }
 
-        Disable();
+        if (m_Type != InteractableType.BED)
+        {
+            Disable();
+        }
     }
 
     public void EnableButtonPromt(bool active)
