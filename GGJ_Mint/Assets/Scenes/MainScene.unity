@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657803, g: 0.49641407, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465778, g: 0.49641377, b: 0.574816, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8763,7 +8763,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6.61e-42, y: NaN, z: 0, w: 1e-45}
+  m_BoundingSphereOverride: {x: 0, y: NaN, z: 0, w: 1.4757395e+20}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -16228,6 +16228,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1558896010690485214, guid: 15070991c8b1bfe4f9d642d5f1937e50,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Freddy Newton | Programming
+
+        Julian Kornick | Sound Design
+
+        Kathrin
+        Radtke | Programming
+
+        Lum | Artwork'
+      objectReference: {fileID: 0}
     - target: {fileID: 7192353025775353297, guid: 15070991c8b1bfe4f9d642d5f1937e50,
         type: 3}
       propertyPath: m_Pivot.x
