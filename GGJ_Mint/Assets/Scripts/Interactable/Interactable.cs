@@ -18,6 +18,7 @@ public class Interactable : MonoBehaviour
 
     private bool isInteractable = true;
     [SerializeField] private GameObject buttonPromt;
+    [SerializeField] private GameObject sparcles;
 
     // Hidden Variable
     [HideInInspector] private Outline outline;
@@ -60,6 +61,14 @@ public class Interactable : MonoBehaviour
         if (buttonPromt && isInteractable)
         {
             buttonPromt.SetActive(active);
+            if (isInteractable)
+            {
+                sparcles.SetActive(!active);
+            }
+            else
+            {
+                sparcles.SetActive(false);
+            }
         }
     }
 
@@ -67,6 +76,7 @@ public class Interactable : MonoBehaviour
     {
         isInteractable = false;
         outline.enabled = false;
+        sparcles.SetActive(false);
     }
 
     private void InteractAnimation()
