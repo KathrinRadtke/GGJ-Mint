@@ -33,10 +33,10 @@ public class GameFlowService : Singleton<GameFlowService>
     
     public void StartGame()
     {
-        StartCoroutine(FadeAndStartGame(false));
+        StartCoroutine(FadeAndStartGame());
     }
 
-    private IEnumerator FadeAndStartGame(bool showCreditsScreen)
+    private IEnumerator FadeAndStartGame()
     {
         currentDay = days[0];
 
@@ -52,7 +52,6 @@ public class GameFlowService : Singleton<GameFlowService>
         EnableDaysInteractables();
 
         yield return new WaitForSeconds(blackoutTime);
-        creditsScreen.SetActive(showCreditsScreen);
 
         dayTextAnimator.SetTrigger("show");
         dayText.text = currentDay.name;
@@ -131,6 +130,31 @@ public class GameFlowService : Singleton<GameFlowService>
         currentActivityDone = false;
         currentDay = days[currentDayIndex];
         StartCoroutine(FadeAndStartNextDay());
+    }
+
+    public IEnumerator ShowEndScreen()
+    {
+        SetMovementAndInteraction(false);
+        float fadeTimer = 0;
+        while (fadeTime > fadeTimer)
+        {
+            fadeTimer += Time.deltaTime;
+            fadeScreen.color = Color.Lerp(new Color(0, 0, 0, 0), Color.black, fadeTimer / fadeTime);
+            yield return null;
+        }
+        yield return new WaitForSeconds(blackoutTime);
+        creditsScreen.SetActive(true);
+
+        fadeTimer = 0;
+        while (fadeTime > fadeTimer)
+        {
+            fadeTimer += Time.deltaTime;
+            fadeScreen.color = Color.Lerp(Color.black, new Color(0, 0, 0, 0), fadeTimer / fadeTime);
+            yield return null;
+        }
+        fadeScreen.color = new Color(0, 0, 0, 0);
+
+        yield return new WaitForSeconds(fadeTime);
     }
 
     private IEnumerator FadeAndStartNextDay()
