@@ -70,6 +70,13 @@ public class Interactable : MonoBehaviour
         {
             Disable();
         }
+        else
+        {
+            if (sparcles)
+            {
+                sparcles.SetActive(false);
+            }
+        }
     }
 
     public void EnableButtonPromt(bool active)
@@ -85,6 +92,14 @@ public class Interactable : MonoBehaviour
             {
                 sparcles.SetActive(false);
             }
+        }
+    }
+
+    public void EnableSparcles()
+    {
+        if (sparcles)
+        {
+            sparcles.SetActive(true);
         }
     }
 

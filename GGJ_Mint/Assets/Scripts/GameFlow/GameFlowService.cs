@@ -29,7 +29,7 @@ public class GameFlowService : Singleton<GameFlowService>
     private bool currentTaskDone = false;
     private bool currentActivityDone = false;
 
-    
+    [SerializeField] private Interactable bed;
     
     public void StartGame()
     {
@@ -117,6 +117,11 @@ public class GameFlowService : Singleton<GameFlowService>
     {
         textBox.onTextFinished -= TaskFinished;
         currentTaskDone = true;
+
+        if (currentTaskDone && currentActivityDone)
+        {
+            HighlightBed();
+        }
     }
 
     public void PlayActivity()
@@ -137,6 +142,16 @@ public class GameFlowService : Singleton<GameFlowService>
     {
         textBox.onTextFinished -= ActivtyFinished;
         currentActivityDone = true;
+        
+        if (currentTaskDone && currentActivityDone)
+        {
+            HighlightBed();
+        }
+    }
+
+    private void HighlightBed()
+    {
+        bed.EnableSparcles();
     }
 
     public void GoToBed()
