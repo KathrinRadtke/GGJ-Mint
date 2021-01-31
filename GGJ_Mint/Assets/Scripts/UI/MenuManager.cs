@@ -63,16 +63,19 @@ public class MenuManager : Singleton<MenuManager>
                 {
                     AnimateBackground(0.5f, false);
                     AnimateMainMenu(0, false);
-                } else if (isSettingsOpen && !isMainMenuOpen)
+                }
+                else if (isSettingsOpen && !isMainMenuOpen)
                 {
                     AnimateSettings(0, false);
                     AnimateMainMenu(0.5f, true);
-                } else if (!isMainMenuOpen && !isSettingsOpen)
+                }
+                else if (!isMainMenuOpen && !isSettingsOpen)
                 {
                     AnimateBackground(0, true);
                     AnimateMainMenu(0.5f, true);
                 }
-            } else if (Time.timeScale == 0)
+            }
+            else if (Time.timeScale == 0)
             {
                 if (isSettingsOpen && !isMainMenuOpen)
                 {
@@ -134,11 +137,11 @@ public class MenuManager : Singleton<MenuManager>
 
     public void AnimateBackground(float delay, bool active)
     {
-        
+
         float xPos = active ? -250 : -2000;
         LeanTween.moveLocalX(m_Background, xPos, 1.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseInOutBack();
 
-        
+
         Debug.Log("animarte background " + xPos);
 
         /*
@@ -165,17 +168,11 @@ public class MenuManager : Singleton<MenuManager>
 
     public void PlayButton()
     {
-        if (!isAnimationRunning && Time.timeScale == 1)
-        {
-            SceneManager.LoadScene(0);
-        }
-        else if (!isAnimationRunning && Time.timeScale == 0)
-        {
-            Time.timeScale = 1;
-            AnimateMainMenu(0, false);
-            AnimateBackground(0, false);
-            StartCoroutine(StartGame());
-        }
+        Time.timeScale = 1;
+        AnimateMainMenu(0, false);
+        AnimateBackground(0, false);
+        m_PlayButton.gameObject.SetActive(false);
+        StartCoroutine(StartGame());
     }
 
     private IEnumerator StartGame()
