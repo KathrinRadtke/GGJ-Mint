@@ -1,7 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel.Design;
-using TreeEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
