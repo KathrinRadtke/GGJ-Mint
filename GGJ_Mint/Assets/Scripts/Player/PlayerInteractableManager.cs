@@ -25,14 +25,18 @@ public class PlayerInteractableManager : MonoBehaviour
         if (isInteractableInRange())
         {
             m_NearestInteractable.SetOutline(true);
+            m_NearestInteractable.EnableButtonPromt(true);
 
             if (Input.GetKeyDown(KeyCode.E))
                 m_NearestInteractable.Interact();
         }
         else
         {
-            foreach(Interactable inter in m_InteractableArray)
+            foreach (Interactable inter in m_InteractableArray)
+            {
                 inter.SetOutline(false);
+                inter.EnableButtonPromt(false);
+            }
         }
     }
 

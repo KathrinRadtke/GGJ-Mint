@@ -17,11 +17,18 @@ public class Interactable : MonoBehaviour
     public float m_InteractableRange = 1.5f;
 
     private bool isInteractable = true;
+    [SerializeField] private GameObject buttonPromt;
 
     // Hidden Variable
     [HideInInspector] private Outline outline;
 
-    public void SetOutline(bool active) => outline.enabled = active;
+    public void SetOutline(bool active)
+    {
+        if (isInteractable)
+        {
+            outline.enabled = active;
+        }
+    }
 
     private void Start()
     {
@@ -45,6 +52,14 @@ public class Interactable : MonoBehaviour
         {
             // InteractAnimation();
             GameFlowService.Instance.GoToBed();
+        }
+    }
+
+    public void EnableButtonPromt(bool active)
+    {
+        if (buttonPromt && isInteractable)
+        {
+            buttonPromt.SetActive(active);
         }
     }
 
