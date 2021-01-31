@@ -930,7 +930,7 @@ PrefabInstance:
     - target: {fileID: 4167841886109530778, guid: 113db504a87f59144a37a9e8707e18e0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4167841886109530778, guid: 113db504a87f59144a37a9e8707e18e0,
         type: 3}
@@ -2371,7 +2371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &337385565
 Transform:
   m_ObjectHideFlags: 0
@@ -2383,7 +2383,7 @@ Transform:
   m_LocalPosition: {x: -0.15602084, y: -2.3892658, z: 3.955946}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2071874192}
+  m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &337385566
@@ -2591,7 +2591,7 @@ Transform:
   - {fileID: 938394376}
   - {fileID: 1396254115}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &425230240
 GameObject:
@@ -4525,7 +4525,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 35, y: 32.3, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -6155,7 +6155,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1271601782
 GameObject:
@@ -8700,7 +8700,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1774042381
 GameObject:
@@ -10806,7 +10806,7 @@ PrefabInstance:
     - target: {fileID: 7231472800360792981, guid: 263cbecefc17b1642820183a922f2169,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7231472800360792981, guid: 263cbecefc17b1642820183a922f2169,
         type: 3}
