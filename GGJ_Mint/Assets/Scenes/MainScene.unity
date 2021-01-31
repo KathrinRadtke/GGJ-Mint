@@ -12579,11 +12579,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7610889567837546266, guid: c41ec1a0753b69048bd3586b5a0fbdf6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2eabe7392009f384aa55267bf0fbe76e, type: 2}
+    - target: {fileID: 615704207967145300, guid: c41ec1a0753b69048bd3586b5a0fbdf6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2eabe7392009f384aa55267bf0fbe76e, type: 2}
     - target: {fileID: 919132149155446097, guid: c41ec1a0753b69048bd3586b5a0fbdf6,
         type: 3}
       propertyPath: m_Name
       value: dirty_dishes_v001_uvs
       objectReference: {fileID: 0}
+    - target: {fileID: 8328515094129251283, guid: c41ec1a0753b69048bd3586b5a0fbdf6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2eabe7392009f384aa55267bf0fbe76e, type: 2}
+    - target: {fileID: 8510627739002905820, guid: c41ec1a0753b69048bd3586b5a0fbdf6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2eabe7392009f384aa55267bf0fbe76e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c41ec1a0753b69048bd3586b5a0fbdf6, type: 3}
 --- !u!1 &1541880751 stripped
@@ -15708,6 +15728,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1848161942, guid: 263cbecefc17b1642820183a922f2169, type: 3}
+      propertyPath: m_Color.a
+      value: 0.6313726
+      objectReference: {fileID: 0}
+    - target: {fileID: 1848161942, guid: 263cbecefc17b1642820183a922f2169, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1848161942, guid: 263cbecefc17b1642820183a922f2169, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1848161942, guid: 263cbecefc17b1642820183a922f2169, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1944040338, guid: 263cbecefc17b1642820183a922f2169, type: 3}
       propertyPath: m_Color.b
       value: 1
