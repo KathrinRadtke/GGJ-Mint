@@ -13,8 +13,9 @@ public class GameFlowService : Singleton<GameFlowService>
     [SerializeField] private PlayerInteractableManager playerInteractableManager;
     [SerializeField] private Animator dayTextAnimator;
     [SerializeField] private Text dayText;
+    [SerializeField] private GameObject creditsScreen;
 
-        [Header("Settings")]
+    [Header("Settings")]
     [SerializeField] private Day[] days;
     [SerializeField] private GameObject[] daysInteractables;
     [SerializeField] private float fadeTime = 0.5f;
@@ -32,10 +33,10 @@ public class GameFlowService : Singleton<GameFlowService>
     
     public void StartGame()
     {
-        StartCoroutine(FadeAndStartGame());
+        StartCoroutine(FadeAndStartGame(false));
     }
 
-    private IEnumerator FadeAndStartGame()
+    private IEnumerator FadeAndStartGame(bool showCreditsScreen)
     {
         currentDay = days[0];
 
@@ -49,7 +50,9 @@ public class GameFlowService : Singleton<GameFlowService>
             yield return null;
         }
         EnableDaysInteractables();
+
         yield return new WaitForSeconds(blackoutTime);
+        creditsScreen.SetActive(showCreditsScreen);
 
         dayTextAnimator.SetTrigger("show");
         dayText.text = currentDay.name;
