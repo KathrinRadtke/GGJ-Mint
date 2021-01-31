@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Friday
   textMessage: Miss you <3 Call me when you have the time. Love, mom.
-  prompt: []
-  answers:
-  - no
-  - no
+  prompt:
+  - It's my mom, she won't be offended if I don't answer back for a while....
+  - I know she'll always be there for me, but I also don't want to take her for granted.
+  answers: []
   taskMessage:
   - I've been wearing the same thing all week, I really should do laundry.
   - My parents would be so worried if they saw me like this. I wish they were here.
