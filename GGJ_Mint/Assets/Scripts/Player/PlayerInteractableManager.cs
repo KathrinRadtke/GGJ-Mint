@@ -55,14 +55,18 @@ public class PlayerInteractableManager : MonoBehaviour
     {
         foreach (Interactable inter in m_InteractableArray)
         {
-            if (m_NearestInteractable == null) m_NearestInteractable = inter;
-            else
+            if (inter.isInteractable)
             {
-                if (inter == m_NearestInteractable || !inter.gameObject.activeSelf) continue;
-
-                if (Vector3.Distance(inter.gameObject.transform.position, transform.position) < Vector3.Distance(m_NearestInteractable.gameObject.transform.position, transform.position))
+                if (m_NearestInteractable == null) m_NearestInteractable = inter;
+                else
                 {
-                    m_NearestInteractable = inter;
+                    if (inter == m_NearestInteractable || !inter.gameObject.activeSelf) continue;
+
+                    if (Vector3.Distance(inter.gameObject.transform.position, transform.position) <
+                        Vector3.Distance(m_NearestInteractable.gameObject.transform.position, transform.position))
+                    {
+                        m_NearestInteractable = inter;
+                    }
                 }
             }
         }
