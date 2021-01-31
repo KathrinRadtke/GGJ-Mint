@@ -15,10 +15,9 @@ MonoBehaviour:
   name: Tuesday
   textMessage: Hey, i heard you and B broke up. I'm so sorry, I thought things were
     going really well with you two.
-  prompt: []
-  answers:
-  - 
-  - 
+  prompt:
+  - Ugh. How does everyone know already? I'm not ready to talk about it yet.
+  answers: []
   taskMessage:
   - I look terrible. Who would want somebody with a face like this?
   - 'I should have stayed with her. '

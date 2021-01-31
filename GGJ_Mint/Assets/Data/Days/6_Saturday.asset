@@ -15,10 +15,12 @@ MonoBehaviour:
   name: Saturday
   textMessage: Me again. It's such a lovely day today and I miss our walks. Want
     to meet at the park this evening? I'll bring the puppy ;)
-  prompt: []
-  answers:
-  - no
-  - no
+  prompt:
+  - ' I miss our walks too. I used to have so many things I was excited to tell them
+    that happened during the week. '
+  - Now I have nothing to say. It would be awkward to just walk in silence for hour,
+    I'd probably bore them.
+  answers: []
   taskMessage:
   - Oh man! I'm so hungry again.
   - Why do you always have to eat.

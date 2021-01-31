@@ -16,10 +16,10 @@ MonoBehaviour:
   textMessage: Hi again! We're going out for drinks tonight, if you're feeling up
     to it. Maybe it would be good for you to have some fun and get your mind off
     things.
-  prompt: []
-  answers:
-  - no
-  - no
+  prompt:
+  - That sounds really nice, but I don't want them to see me like this. I don't want
+    their pity.
+  answers: []
   taskMessage:
   - Wow, I didn't realize how hungry I am. I should eat something, but I really don't
     feel like cooking right now

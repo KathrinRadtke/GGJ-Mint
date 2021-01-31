@@ -15,10 +15,14 @@ MonoBehaviour:
   name: Sunday
   textMessage: '"Hey, I heard about the thing with B. I know you are sad. But I''m
     taking you out for dinner tonight. I''ll be there at 6.'
-  prompt: []
-  answers:
-  - no
-  - no
+  prompt:
+  - 'Maybe today is the day, even if I''m not feeling 100% ready yet. '
+  - It's nice to be excited about something again! I think even if I'm not at my
+    best, they'll still want to see me.
+  - 'I don''t feel like I have to act like a different person around my friends so
+    they''ll still like me...unlike her. '
+  - So why am I still so nervous?
+  answers: []
   taskMessage:
   - 'I''ll feel more like myself again when I''m all clean and wearing fresh clothes. '
   taskSound: Shower
