@@ -49,7 +49,7 @@ Transform:
   m_GameObject: {fileID: 1927158957922005037}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 0.5, y: 1, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2104339506795450413}
   m_Father: {fileID: 0}
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6685a3ef5dd49a64db51a811ae06e0bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MovementSpeed: 1
+  m_MovementSpeed: 3
   m_Animator: {fileID: 1616401366}
   GFX: {fileID: 1621239847935888023}
   waitTimeBetweenStepSound: 0.66
@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractableArray: []
+  m_Animator: {fileID: 1616401366}
 --- !u!95 &63501114003132171
 Animator:
   serializedVersion: 3
@@ -149,12 +150,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 5f8afb30a23faeb4db34d73c37c9a98f,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5f8afb30a23faeb4db34d73c37c9a98f,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f8afb30a23faeb4db34d73c37c9a98f,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5f8afb30a23faeb4db34d73c37c9a98f,
         type: 3}

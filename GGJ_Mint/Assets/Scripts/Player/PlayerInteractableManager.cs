@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerInteractableManager : MonoBehaviour
 {
     public Interactable[] m_InteractableArray;
-    [HideInInspector] private Interactable m_NearestInteractable;
+    private Interactable m_NearestInteractable;
+    public Animator m_Animator;
 
     private void Start()
     {
@@ -28,7 +29,10 @@ public class PlayerInteractableManager : MonoBehaviour
             m_NearestInteractable.EnableButtonPromt(true);
 
             if (Input.GetKeyDown(KeyCode.E))
+            {
+                m_Animator.SetTrigger("Interact");
                 m_NearestInteractable.Interact();
+            }
         }
         else
         {
