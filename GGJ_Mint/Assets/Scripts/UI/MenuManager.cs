@@ -12,7 +12,8 @@ public class MenuManager : Singleton<MenuManager>
     public GameObject m_MainMenuArea;
     public GameObject m_SettingsArea;
 
-    [Header("Main Menu Objects")]
+    [Header("Main Menu Objects")] [SerializeField]
+    private Animator backgroundAnimator;
     public GameObject m_MainMenuTitle;
     public GameObject m_PlayButton;
     public GameObject m_SettingsButton;
@@ -39,8 +40,11 @@ public class MenuManager : Singleton<MenuManager>
     private void Init()
     {
         Time.timeScale = 0;
-        AnimateBackground(0);
+        //AnimateBackground(0);
+        backgroundAnimator.SetTrigger("show");
+
         AnimateMainMenu(0);
+      
     }
 
     private void Update()
@@ -53,6 +57,7 @@ public class MenuManager : Singleton<MenuManager>
             {
                 AnimateMainMenu(0);
                 AnimateBackground(0.5f);
+
             }
 
             if (isSettingsOpen)
@@ -72,8 +77,8 @@ public class MenuManager : Singleton<MenuManager>
                 AnimateMainMenu(1.1f);
             } else if (isMainMenuOpen && !isSettingsOpen)
             {
-                AnimateBackground(0.5f);
                 AnimateMainMenu(0);
+                AnimateBackground(0.5f);
             }
         }
     }
@@ -126,7 +131,17 @@ public class MenuManager : Singleton<MenuManager>
 
     public void AnimateBackground(float delay)
     {
-        LeanTween.moveX(m_Background, Mathf.FloorToInt(m_Background.transform.position.x) == -81 ? -501 : -81, 1.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseInOutBack();
+        Debug.Log("animarte background");
+        if (isMainMenuOpen)
+        {
+            backgroundAnimator.SetTrigger("show");
+        }
+        else
+        {
+            backgroundAnimator.SetTrigger("hide");
+        }
+
+        //LeanTween.moveX(m_Background, Mathf.FloorToInt(m_Background.transform.position.x) == -81 ? -501 : -81, 1.3f).setIgnoreTimeScale(true).setDelay(delay).setEaseInOutBack();
     }
 
     #endregion
@@ -143,8 +158,8 @@ public class MenuManager : Singleton<MenuManager>
         if (!isAnimationRunning)
         {
             Time.timeScale = 1;
-            AnimateBackground(0);
             AnimateMainMenu(0);
+            AnimateBackground(0);
             StartCoroutine(StartGame());
         }
     }
