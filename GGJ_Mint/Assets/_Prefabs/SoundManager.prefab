@@ -186,14 +186,14 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - Name: AMB_Birds
-    AudioClip: {fileID: 8300000, guid: f78be9fe48e632b48a1a4f53c4af625e, type: 3}
+    AudioClip: {fileID: 8300000, guid: 35074f261520efd47999771726a0fb2f, type: 3}
     mixerGroup: {fileID: -3035194350459163786, guid: cd9753436728016489e6b319a485743b,
       type: 2}
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - Name: AMB_Rain
-    AudioClip: {fileID: 8300000, guid: 351e51e28f5a53c4fabb3fa741445d60, type: 3}
+    AudioClip: {fileID: 8300000, guid: 09db82502c9e9ee4ebe47e51a91a2d52, type: 3}
     mixerGroup: {fileID: -3035194350459163786, guid: cd9753436728016489e6b319a485743b,
       type: 2}
     pitch: 1
