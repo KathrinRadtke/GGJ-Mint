@@ -15,7 +15,6 @@ public class Interactable : MonoBehaviour
     [Header("Interactable Settings")]
     public InteractableType m_Type;
     public float m_InteractableRange = 1.5f;
-    public bool m_Door;
 
     private bool isInteractable = true;
     [SerializeField] private GameObject buttonPromt;
@@ -55,11 +54,6 @@ public class Interactable : MonoBehaviour
         {
             // InteractAnimation();
             GameFlowService.Instance.GoToBed();
-        }
-
-        if (m_Door)
-        {
-            GameFlowService.Instance.ShowEndScreen();
         }
 
         if (disableOnInteract != null)
