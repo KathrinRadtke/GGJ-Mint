@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
 
 public class GameFlowService : Singleton<GameFlowService>
@@ -8,6 +10,7 @@ public class GameFlowService : Singleton<GameFlowService>
     [SerializeField] private TextBox textBox;
 
     [SerializeField] private Image fadeScreen;
+    [SerializeField] private Volume ppVolume;
 
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private PlayerInteractableManager playerInteractableManager;
@@ -174,6 +177,7 @@ public class GameFlowService : Singleton<GameFlowService>
         currentActivityDone = false;
         currentDay = days[currentDayIndex];
         StartCoroutine(FadeAndStartNextDay());
+        IncreaseSaturation();
     }
 
     private IEnumerator FadeAndStartNextDay()
@@ -261,6 +265,14 @@ public class GameFlowService : Singleton<GameFlowService>
     {
         // todo
         textBox.onTextFinished -= PlayAnswers;
+    }
+
+
+    private void IncreaseSaturation()
+    {
+        ColorAdjustments colorAdjustments;
+        ppVolume.profile.TryGet(out colorAdjustments);
+        colorAdjustments.saturation.value += 7f;
     }
 }
 
