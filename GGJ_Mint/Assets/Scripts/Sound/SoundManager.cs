@@ -10,6 +10,7 @@ public class SoundManager : Singleton<SoundManager>
     public AudioMixer m_Mixer;
 
     public Sound[] m_Sounds;
+    private List<Sound> m_Musics = new List<Sound>();
 
     private void Awake()
     {
@@ -26,21 +27,58 @@ public class SoundManager : Singleton<SoundManager>
             s.source.loop = s.loop;
             s.source.pitch = s.pitch;
             s.source.outputAudioMixerGroup = s.mixerGroup;
+
+            if (s.source.loop)
+            {
+                m_Musics.Add(s);
+            }
         }
+
+        SetUpMusic();
+    }
+
+    public void SetUpMusic()
+    {
+        foreach (Sound s in m_Musics)
+        {
+            s.source.volume = 0;
+            s.source.Play();
+        }
+    }
+
+    public void stopAllMusic()
+    {
+
     }
 
     // Needs to be tested
     public void playMusic(string name, float fadeDuration)
     {
         Sound s = Array.Find(m_Sounds, sound => sound.Name == name);
-        Sound currentMusic = Array.Find(m_Sounds, sound => sound.source.isPlaying);
 
         if (s == null) return;
-
-        if (currentMusic != null && s != null)
+        else
         {
-            Debug.Log("Current Musik: " + currentMusic.Name + "New Song: " + s.Name);
+            s.source.volume = 1;
+            
+            if (s.Name.Contains("AMB"))
+            {
+                foreach (Sound _s in m_Musics)
+                {
+                    if (!_s.Name.Contains("AMB"))
+                        _s.source.volume = 0;
+                }
+            } else if (s.Name.Contains("MX"))
+            {
+                foreach (Sound _s in m_Musics)
+                {
+                    if (!_s.Name.Contains("MX"))
+                        _s.source.volume = 0;
+                }
+            }
 
+
+            /*
             LeanTween.value(1, 0, fadeDuration).setEaseInOutQuad().setOnUpdate((float val) =>
             {
                 currentMusic.source.volume = val;
@@ -56,9 +94,9 @@ public class SoundManager : Singleton<SoundManager>
             {
                 s.source.volume = val;
             });
-        }
 
-        if (currentMusic == null && s != null) s.source.Play();
+            */
+        }
     }
 
     public void playSound(string name)
