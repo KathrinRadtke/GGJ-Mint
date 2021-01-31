@@ -39,12 +39,14 @@ public class SoundManager : Singleton<SoundManager>
 
         if (currentMusic != null && s != null)
         {
+            Debug.Log("Current Musik: " + currentMusic.Name + "New Song: " + s.Name);
+
             LeanTween.value(1, 0, fadeDuration).setEaseInOutQuad().setOnUpdate((float val) =>
             {
                 currentMusic.source.volume = val;
-                if (val == 0)
+                if (val >= 0)
                 {
-                    Debug.Log("stop current music");
+                    currentMusic.source.enabled = false;
                     currentMusic.source.Stop();
                 }
             });
